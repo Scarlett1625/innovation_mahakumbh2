@@ -50,12 +50,14 @@
         gap: 5px;
     }
 
-    .logo-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-height: 80px; /* keep logo container smaller */
-    }
+   .logo-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;       /* 🚀 Removes fixed 300px height */
+    max-height: 80px;   /* 🚀 Keeps logo compact inside header */
+}
+
 
     .logo-image img {
         height: 80px;   /* logo size fixed */
