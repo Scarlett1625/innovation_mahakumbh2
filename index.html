@@ -250,10 +250,31 @@
 
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
+
+/* Desktop: 3 cards in a row */
+        @media (min-width: 1024px) {
+            .cards-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+/* Tablets: 2 cards per row */
+        @media (min-width: 600px) and (max-width: 1023px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+/* Mobile: 1 card per row */
+        @media (max-width: 599px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
         .card {
             background: white;
@@ -635,39 +656,39 @@
     </div>
 </section>
 
-<!-- Workshop Section -->
-<section id="workshop" class="workshop-highlights">
+<!-- Pre Activities Section -->
+<section id="pre-activities" class="workshop-highlights">
     <div class="container">
         <div class="section-title">
-            <h2>Agentic AI Workshop</h2>
-            <p>11th & 12th August 2025 | Creating Your Own Agentic AI</p>
+            <h2>Pre Activities</h2>
+            <p>Engaging teachers and students through impactful initiatives</p>
         </div>
         <div class="cards-container">
             <div class="card">
                 <div class="card-content">
                     <div class="card-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3>Introduction to Agentic AI</h3>
-                    <p>Learn how agentic systems differ from conventional AI...</p>
+                    <h3>Teacher & Student Engagement Strategies</h3>
+                    <p>200 FDP Trainings aim to expand reach from 50–60 colleges to more, empowering teachers as ambassadors. Class Representatives (CRs) act as student ambassadors to form groups and collect student email IDs for Wadhwani Foundation platform access.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <div class="card-icon">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Hands-on Demos</h3>
-                    <p>Using Zapier and n8n to automate workflows...</p>
+                    <h3>Bootcamps for Innovative Learning</h3>
+                    <p>Class Representatives (CRs) facilitate innovation-focused bootcamps by forming student groups and ensuring access to the Wadhwani Foundation platform.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <div class="card-icon">
-                        <i class="fas fa-comments"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Conversational AI</h3>
-                    <p>Building agents with Le Chat Mistral...</p>
+                    <h3>UMIT & NSS Special Force Initiative</h3>
+                    <p>Over 10,000 participants will explore innovative projects. Special Bootcamps will focus on Agentic AI + NSS students & teachers, with activities linked to Sustainable Development Goals (SDGs).</p>
                 </div>
             </div>
         </div>
