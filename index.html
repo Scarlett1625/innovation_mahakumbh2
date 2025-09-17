@@ -1,719 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovation Mahakumbha - SNDT Women's University</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
-            color: white;
-            padding: 4px 0; /* minimal top & bottom padding */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .logo-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: auto;       /* removes fixed 300px */
-            max-height: 80px;   /* keeps logo compact */
-        }
-
-        .logo-image img {
-            height: 80px;   /* fixed logo size */
-            width: auto;    /* keeps aspect ratio */
-            object-fit: contain;
-        }
-
-        .logo-text h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .logo-text p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-        
-        nav ul li a:hover {
-            color: #FF6B6B;
-            background: rgba(255, 255, 255, 0.9);
-        }
-        
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding: 60px 0;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .hero-background img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 2;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 3;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-           
-        .btn {
-            display: inline-block;
-            background: #FF9E6D;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(255, 158, 109, 0.4);
-        }
-        
-        .btn:hover {
-            background: #FFB18A;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 158, 109, 0.5);
-        }
-        
-        /* Section Styles */
-        section {
-            padding: 40px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #FF6B6B;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: #FF9E6D;
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.15);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Workshop Section */
-        .workshop-highlights {
-            background: linear-gradient(to bottom, #FFF5F5, #FFEFEF);
-        }
-        
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
-        }
-        
-        .card-content {
-            padding: 25px;
-        }
-        
-        .card-icon {
-            font-size: 2.5rem;
-            color: #FF6B6B;
-            margin-bottom: 20px;
-        }
-        
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: #FF6B6B;
-        }
-        
-        /* Event Details */
-        .event-details {
-            background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
-            color: white;
-        }
-        
-        .event-details .section-title h2 {
-            color: white;
-        }
-        
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .detail-box {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .detail-box i {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #FFEFEF;
-        }
-        
-        .detail-box h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Registration Section */
-        .registration {
-            background: linear-gradient(to bottom, #FFF5F5, #FFEFEF);
-        }
-        
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #FF6B6B;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #FF6B6B;
-            box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
-        }
-        
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: #FFEFEF;
-        }
-        
-        .footer-section p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-section ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-section ul li a:hover {
-            color: #FFEFEF;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: #FFEFEF;
-            color: #FF6B6B;
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .form-container {
-                padding: 20px;
-            }
-            
-            .logo {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .logo-image {
-                max-height: 60px;
-            }
-
-            .logo-image img {
-                height: 60px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovation Mahakumbha - SNDT Women's University</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Keep your original CSS here (no color changes needed) */
+  </style>
 </head>
 <body>
+
 <!-- Header -->
-   <header>
-    <div class="container">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-image">
-                    <img src="naac.jpg" alt="SNDT Women's University Logo">
-                </div>
-        
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#workshop">Workshop</a></li>
-                    <li><a href="#event">Event Details</a></li>
-                    <li><a href="#registration">Register</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-image">
+          <img src="naac.jpg" alt="SNDT Women's University Logo">
         </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#focus">Focus Areas</a></li>
+          <li><a href="#flagship">Flagship Showcases</a></li>
+          <li><a href="#workshop">Workshop</a></li>
+          <li><a href="#event">Event Details</a></li>
+          <li><a href="#registration">Register</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </div>
 </header>
 
 <!-- Hero Section -->
 <section class="hero">
-    <div class="hero-background">
-        <img src="pot.jpg" alt="Innovation Mahakumbha Background">
+  <div class="hero-background">
+    <img src="pot.jpg" alt="Innovation Mahakumbha Background">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <h2>INNOVATION MAHAKUMBHA</h2>
+      <p>Celebrating Student Innovation & Entrepreneurship</p>
+      <p><strong>9 November 2025</strong> | SNDT Women's University, Juhu Campus</p>
+      <a href="#registration" class="btn">Register Now</a>
     </div>
-    <div class="container">
-        <div class="hero-content">
-            <h2>INNOVATION MAHAKUMBHA</h2>
-            <p>Celebrating Student Innovation & Entrepreneurship</p>
-            <p>November 2025 | SNDT Women's University, Juhu Campus</p>
-            <a href="#registration" class="btn">Register Now</a>
-        </div>
-    </div>
+  </div>
 </section>
- <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Innovation Mahakumbha</h2>
-                <p>A platform for creativity, entrepreneurship, and academic-industry collaboration</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p><strong>Innovation Mahakumbh</strong> is an exhibition of student-led innovative projects from across SNDT Women's University departments and affiliated institutions. This initiative provides a unique platform for all stakeholders to showcase creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration.</p>
-                    <p>In collaboration with the Wadhwani Foundation, over 200 faculty from the University's departments and affiliated colleges received specialized training in innovation, entrepreneurship, and Agentic AI. Equipped with advanced skills and tools, they foster a culture of ideation, problem-solving, and product development.</p>
-                    <p>Under their guidance, students have developed technology-driven prototypes, sustainable solutions, and entrepreneurial ventures addressing real-world challenges in healthcare, education, agriculture, energy, digital inclusion, and women's empowerment.</p>
-                </div>
-                <div class="about-image">
-                    <img src="maha.png" alt="Innovation Exhibition">
-                </div>
-            </div>
-        </div>
-    </section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Innovation Mahakumbha</h2>
+      <p>A platform for creativity, entrepreneurship, and academic–industry collaboration</p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p><strong>Innovation Mahakumbha 2025</strong> proudly showcases student-led innovative projects across SNDT Women’s University departments and affiliated colleges. This initiative fosters <em>creativity, entrepreneurship, grassroots innovation, and academic–industry collaboration</em> in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
+        <p>In collaboration with the <strong>Wadhwani Foundation</strong>, over 200 faculty members received training in innovation, entrepreneurship, and Agentic AI. Guided by these mentors, students have developed technology-driven prototypes and sustainable solutions addressing challenges in healthcare, education, agriculture, energy, digital inclusion, and women’s empowerment.</p>
+        <p>With <strong>500+ projects curated by 200+ mentors</strong> and <strong>5,000+ visitors</strong>, the event promises to be a mega showcase of innovation, talent, and collaboration.</p>
+      </div>
+      <div class="about-image">
+        <img src="maha.png" alt="Innovation Exhibition">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Focus Areas Section -->
+<section id="focus" class="workshop-highlights">
+  <div class="container">
+    <div class="section-title">
+      <h2>Focus Areas</h2>
+      <p>200+ innovative ideas showcased across diverse sectors</p>
+    </div>
+    <div class="cards-container">
+      <div class="card"><div class="card-content"><h3>Healthcare</h3></div></div>
+      <div class="card"><div class="card-content"><h3>Education</h3></div></div>
+      <div class="card"><div class="card-content"><h3>Agriculture</h3></div></div>
+      <div class="card"><div class="card-content"><h3>Energy</h3></div></div>
+      <div class="card"><div class="card-content"><h3>Digital Inclusion</h3></div></div>
+      <div class="card"><div class="card-content"><h3>Women’s Empowerment</h3></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Flagship Showcases -->
+<section id="flagship" class="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>Flagship Showcases</h2>
+      <p>Highlighting the power of innovation to solve real-world problems</p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <ul>
+          <li><strong>Mental Health AI</strong> – Solutions for emotional well-being</li>
+          <li><strong>Pharmacopeia AI</strong> – Advancements in medicine and healthcare</li>
+          <li><strong>Spiritual AI</strong> – Tools for personal growth and mindfulness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Event Details -->
 <section id="event" class="event-details">
-    <div class="container">
-        <div class="section-title">
-            <h2>Event Highlights</h2>
-            <p>Join us for this celebration of innovation and entrepreneurship</p>
-        </div>
-        <div class="details-grid">
-            <div class="detail-box">
-                <i class="fas fa-lightbulb"></i>
-                <h3>200+ Projects</h3>
-                <p>Showcasing innovative ideas from students</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3>Expert Talks</h3>
-                <p>Learn from industry leaders and innovators</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-handshake"></i>
-                <h3>Networking</h3>
-                <p>Connect with investors and industry experts</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-trophy"></i>
-                <h3>Awards</h3>
-                <p>Recognition for the most innovative projects</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-title">
+      <h2>Event Highlights</h2>
+      <p>Join us for this mega showcase of innovation and talent</p>
     </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <i class="fas fa-lightbulb"></i>
+        <h3>500+ Projects</h3>
+        <p>Curated by 200+ mentors across multiple domains</p>
+      </div>
+      <div class="detail-box">
+        <i class="fas fa-users"></i>
+        <h3>5,000+ Visitors</h3>
+        <p>Including industry experts, funders, parents, and stakeholders</p>
+      </div>
+      <div class="detail-box">
+        <i class="fas fa-handshake"></i>
+        <h3>Networking Zones</h3>
+        <p>Connect with entrepreneurs, investors, and collaborators</p>
+      </div>
+      <div class="detail-box">
+        <i class="fas fa-award"></i>
+        <h3>Incubation & Awards</h3>
+        <p>Top projects get incubation, funding, and recognition</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Workshop Section -->
-<section id="workshop" class="workshop-highlights">
-    <div class="container">
-        <div class="section-title">
-            <h2>Agentic AI Workshop</h2>
-            <p>11th & 12th August 2025 | Creating Your Own Agentic AI</p>
-        </div>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Introduction to Agentic AI</h3>
-                    <p>Learn how agentic systems differ from conventional AI...</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Hands-on Demos</h3>
-                    <p>Using Zapier and n8n to automate workflows...</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Conversational AI</h3>
-                    <p>Building agents with Le Chat Mistral...</p>
-                </div>
-            </div>
-        </div>
+<!-- Registration Section -->
+<section id="registration" class="registration">
+  <div class="container">
+    <div class="section-title">
+      <h2>Registration</h2>
+      <p>Register your innovative project for Innovation Mahakumbha 2025</p>
     </div>
+    <div class="form-container">
+      <form>
+        <div class="form-group"><label for="name">Student Name</label><input type="text" id="name"></div>
+        <div class="form-group"><label for="institute">Institute Name</label><input type="text" id="institute"></div>
+        <div class="form-group"><label for="address">Institute Address</label><input type="text" id="address"></div>
+        <div class="form-group"><label for="course">Course/Programme</label><input type="text" id="course"></div>
+        <div class="form-group"><label for="year">Current Class/Year</label><input type="text" id="year"></div>
+        <div class="form-group"><label for="innovation">Title of Innovation</label><input type="text" id="innovation"></div>
+        <div class="form-group"><label for="participants">Number of Students Presenting</label><input type="number" id="participants"></div>
+        <div class="form-group"><label for="phone">Contact Number</label><input type="tel" id="phone"></div>
+        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email"></div>
+        <button type="submit" class="btn">Submit Registration</button>
+      </form>
+      <p style="margin-top:15px; font-size:0.9rem; color:#FF6B6B;"><strong>Note:</strong> Fill the form in BLOCK LETTERS. Completed registration must be sent to <strong>innovation2025@sndt.ac.in</strong>.</p>
+    </div>
+  </div>
 </section>
 
- <!-- Registration Section -->
-    <section id="registration" class="registration">
-        <div class="container">
-            <div class="section-title">
-                <h2>Registration</h2>
-                <p>Register your innovative project for Innovation Mahakumbha 2025</p>
-            </div>
-            <div class="form-container">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Student Name</label>
-                        <input type="text" id="name" placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="institute">Institute Name</label>
-                        <input type="text" id="institute" placeholder="Enter your institute name">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Institute Address</label>
-                        <input type="text" id="address" placeholder="Enter your institute address">
-                    </div>
-                    <div class="form-group">
-                        <label for="course">Course/Programme</label>
-                        <input type="text" id="course" placeholder="Enter your course/programme">
-                    </div>
-                    <div class="form-group">
-                        <label for="year">Current Class/Year</label>
-                        <input type="text" id="year" placeholder="Enter your current class/year">
-                    </div>
-                    <div class="form-group">
-                        <label for="innovation">Title of Innovation</label>
-                        <input type="text" id="innovation" placeholder="Enter the title of your innovation">
-                    </div>
-                    <div class="form-group">
-                        <label for="participants">Number of Students Presenting</label>
-                        <input type="number" id="participants" placeholder="Enter number of participants">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Contact Number</label>
-                        <input type="tel" id="phone" placeholder="Enter your contact number">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email address">
-                    </div>
-                    <button type="submit" class="btn">Submit Registration</button>
-                </form>
-            </div>
+<!-- Footer -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
+        <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
+        <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#focus">Focus Areas</a></li>
+          <li><a href="#flagship">Flagship Showcases</a></li>
+          <li><a href="#event">Event Details</a></li>
+          <li><a href="#registration">Registration</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <p>Stay updated with the latest news and announcements</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/sndtwuniversity/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/Sndt_Digital/"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/sndtwuinsta/?hl=en"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/school/sndtwu/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SNDT Women's University. All Rights Reserved.</p>
+      <p>An Enlightened Woman is a Source of Infinite Strength</p>
+    </div>
+  </div>
+</footer>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
-                    <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
-                    <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about">About Mahakumbha</a></li>
-                        <li><a href="#workshop">AI Workshop</a></li>
-                        <li><a href="#event">Event Details</a></li>
-                        <li><a href="#registration">Registration</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <p>Stay updated with the latest news and announcements</p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/sndtwuniversity/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/Sndt_Digital/"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/sndtwuinsta/?hl=en"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/school/sndtwu/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 SNDT Women's University. All Rights Reserved.</p>
-                <p>An Enlightened Woman is a Source of Infinite Strength</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
-
-
