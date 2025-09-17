@@ -296,10 +296,36 @@
 
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
+
+/* Default: flexible auto-fit */
+        .details-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+/* Large screens: 4 columns */
+        @media (min-width: 1024px) {
+            .details-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+/* Tablets: 2 columns */
+        @media (min-width: 600px) and (max-width: 1023px) {
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+/* Mobile: 1 column */
+        @media (max-width: 599px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
         .detail-box {
             background: rgba(255, 255, 255, 0.2);
@@ -567,23 +593,43 @@
         <div class="details-grid">
             <div class="detail-box">
                 <i class="fas fa-lightbulb"></i>
-                <h3>200+ Projects</h3>
-                <p>Showcasing innovative ideas from students</p>
+                <h3>Innovation Stalls</h3>
+                <p>Students showcase projects in dedicated stalls</p>
             </div>
             <div class="detail-box">
                 <i class="fas fa-chalkboard-teacher"></i>
-                <h3>Expert Talks</h3>
-                <p>Learn from industry leaders and innovators</p>
+                <h3>Expert Assessment</h3>
+                <p>Experts assess projects and provide valuable feedback</p>
+            </div>
+            <div class="detail-box">
+                <i class="fas fa-seedling"></i>
+                <h3>Startup & Funding</h3>
+                <p>Explore opportunities for startups and funding</p>
+            </div>
+            <div class="detail-box">
+                <i class="fas fa-microphone"></i>
+                <h3>Talks & Workshops</h3>
+                <p>Entrepreneurs and investors conduct interactive sessions</p>
             </div>
             <div class="detail-box">
                 <i class="fas fa-handshake"></i>
-                <h3>Networking</h3>
-                <p>Connect with investors and industry experts</p>
+                <h3>Networking Zones</h3>
+                <p>Spaces designed to connect collaborators and stakeholders</p>
             </div>
             <div class="detail-box">
                 <i class="fas fa-trophy"></i>
-                <h3>Awards</h3>
-                <p>Recognition for the most innovative projects</p>
+                <h3>Award Ceremony</h3>
+                <p>Recognising the most innovative and impactful projects</p>
+            </div>
+            <div class="detail-box">
+                <i class="fas fa-project-diagram"></i>
+                <h3>500+ Projects</h3>
+                <p>Curated by 200+ dedicated mentors</p>
+            </div>
+            <div class="detail-box">
+                <i class="fas fa-users"></i>
+                <h3>5,000+ Visitors</h3>
+                <p>Including industry experts, funders, parents & stakeholders</p>
             </div>
         </div>
     </div>
