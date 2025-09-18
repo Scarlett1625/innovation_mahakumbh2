@@ -1125,7 +1125,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             </div>
         </div>
     </footer>
-   <script>
+<script>
 // Manual image slider functionality
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slide');
@@ -1133,6 +1133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevArrow = document.querySelector('.arrow.prev');
     const nextArrow = document.querySelector('.arrow.next');
     let currentSlide = 0;
+    let autoSlideInterval;
     
     // Function to show a specific slide
     function showSlide(index) {
@@ -1160,23 +1161,61 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Event listeners for arrows
-    nextArrow.addEventListener('click', nextSlide);
-    prevArrow.addEventListener('click', prevSlide);
+    nextArrow.addEventListener('click', function(e) {
+        e.stopPropagation();
+        nextSlide();
+    });
+    
+    prevArrow.addEventListener('click', function(e) {
+        e.stopPropagation();
+        prevSlide();
+    });
     
     // Event listeners for dots
     dots.forEach(dot => {
-        dot.addEventListener('click', function() {
+        dot.addEventListener('click', function(e) {
+            e.stopPropagation();
             let slideIndex = parseInt(this.getAttribute('data-index'));
             showSlide(slideIndex);
         });
     });
 
-    // ADD THIS CODE RIGHT HERE - Fix for clickable links in slides
+    // Fix for clickable links in slides - allow links to work
     document.querySelectorAll('.slide-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.stopPropagation(); // This prevents the slider JavaScript from interfering
+            // Allow the link to work normally
+            console.log("Link clicked - navigating to:", this.href);
         });
     });
+
+    // Prevent slide changes when clicking on links
+    document.querySelectorAll('.slide').forEach(slide => {
+        slide.addEventListener('click', function(e) {
+            // If the click was on a link, don't change slides
+            if (e.target.closest('.slide-link')) {
+                return; // Let the link handle the click
+            }
+            
+            // Otherwise, proceed with slide change logic if needed
+        });
+    });
+
+    // Auto slide functionality (optional)
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+    
+    // Start auto sliding
+    startAutoSlide();
+    
+    // Pause auto sliding when user interacts with slider
+    const slider = document.querySelector('.hero-slider');
+    slider.addEventListener('mouseenter', stopAutoSlide);
+    slider.addEventListener('mouseleave', startAutoSlide);
 });
 </script>
 </body>
