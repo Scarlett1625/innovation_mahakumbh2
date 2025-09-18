@@ -95,62 +95,69 @@
         }
 
         /* Hero Section */
-        .hero {
-            position: relative;
-            padding: 60px 0;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-        }
+        /* Hero Section */
+.hero {
+    position: relative;
+    padding: 100px 0; /* Increased padding for more height */
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    min-height: 100vh; /* Makes section at least full viewport height */
+    display: flex;
+    align-items: center;
+}
 
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 
-        .hero-background img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* Focus on the top part of the image */
+}
 
-        .hero-background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 2;
-        }
+.hero-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text readability */
+    z-index: 2;
+}
 
-        .hero .container {
-            position: relative;
-            z-index: 3;
-        }
+.hero .container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+.hero h2 {
+    font-size: 3.5rem; /* Slightly larger text */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for better readability */
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+.hero p {
+    font-size: 1.4rem; /* Slightly larger text */
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Text shadow for better readability */
+}
 
         .btn {
             display: inline-block;
@@ -712,6 +719,7 @@
     </div>
 </header>
 
+<!-- Hero Section -->
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-background">
