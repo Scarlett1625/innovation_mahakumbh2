@@ -96,9 +96,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            padding: 60px 0;
-            text-align: center;
-            color: white;
+            height: 70vh;
             overflow: hidden;
         }
 
@@ -153,28 +151,6 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.3);
             z-index: 3;
-        }
-
-       
-        .btn {
-            display: inline-block;
-            background: #FF9E6D;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(255, 158, 109, 0.4);
-        }
-
-        .btn:hover {
-            background: #FFB18A;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 158, 109, 0.5);
         }
 
         /* Slider Navigation */
@@ -531,6 +507,27 @@
             box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
         }
 
+        .btn {
+            display: inline-block;
+            background: #FF9E6D;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 158, 109, 0.4);
+        }
+
+        .btn:hover {
+            background: #FFB18A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 158, 109, 0.5);
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
@@ -622,10 +619,6 @@
             .about-content {
                 flex-direction: column;
             }
-
-            .hero h2 {
-                font-size: 2.5rem;
-            }
         }
 
         @media (max-width: 768px) {
@@ -638,10 +631,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
             }
 
             .section-title h2 {
@@ -673,6 +662,10 @@
                 width: 30px;
                 height: 30px;
                 font-size: 1.2rem;
+            }
+            
+            .hero {
+                height: 50vh;
             }
         }
 
@@ -772,8 +765,7 @@
     </div>
 </header>
 
-<!-- Hero Section -->
-<!-- Hero Section -->
+<!-- Hero Section - Clean Slider (No Text/Button) -->
 <section class="hero">
     <div class="hero-slider">
         <!-- First slide (no link) -->
@@ -804,9 +796,6 @@
         <div class="slider-dot" data-index="1"></div>
         <div class="slider-dot" data-index="2"></div>
     </div>
-    
-
-    
 </section>
     
  <!-- About Section -->
@@ -820,7 +809,7 @@
                 <div class="about-text">
                     <p><strong>SNDT Women’s University</strong> proudly presents - <strong>Innovation Mahakumbha</strong> – an exhibition of student-led innovative projects from across its departments, conducted and affiliated institutions. This initiative attempts to provide a unique platform to all its stakeholders for creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
                     <p>Over 200 faculty from the University and its affiliated colleges received specialized training in innovation, entrepreneurship, and Agentic AI through the Wadhwani Foundation. This equipped them with advanced skills to drive ideation, problem-solving, and product development.</p>
-                    <p>Guided by these trained faculty, students have built technology-driven prototypes and sustainable solutions. Their entrepreneurial ventures address real-world challenges in healthcare, education, agriculture, energy, digital inclusion, and women’s empowerment.</p>
+                    <p>Guided by these trained faculty, students have built technology-driven prototypes and sustainable solutions. Their entrepreneurial ventures address real-world challenges in healthcare, education, agriculture, energy, digital inclusion, and women's empowerment.</p>
                 </div>
                 <div class="about-image">
                     <img src="maha.png" alt="Innovation Exhibition">
@@ -1098,7 +1087,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 });
 </script>
 
-    <!-- Footer -->
+   <!-- Footer -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
@@ -1181,5 +1170,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-    </body>
+</body>
 </html>
