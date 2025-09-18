@@ -96,89 +96,69 @@
 
         /* Hero Section */
         /* Hero Section */
-.hero {
-    position: relative;
-    padding: 100px 0; /* Increased padding for more height */
-    text-align: center;
-    color: white;
-    overflow: hidden;
-    min-height: 100vh; /* Makes section at least full viewport height */
-    display: flex;
-    align-items: center;
-}
-
-.hero-background {
+/* Hero Slider Styles */
+.hero-slider {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: hidden;
 }
 
-.hero-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top; /* Focus on the top part of the image */
-}
-
-.hero-background::after {
-    content: "";
+.slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text readability */
-    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+/* Ensure the hero content stays above everything and is clickable */
 .hero .container {
     position: relative;
-    z-index: 3;
-    width: 100%;
+    z-index: 4;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
     position: relative;
-    z-index: 2;
+    z-index: 5;
 }
-
-.hero h2 {
-    font-size: 3.5rem; /* Slightly larger text */
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for better readability */
-}
-
-.hero p {
-    font-size: 1.4rem; /* Slightly larger text */
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Text shadow for better readability */
-}
-
-        .btn {
-            display: inline-block;
-            background: #FF9E6D;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(255, 158, 109, 0.4);
-        }
-
-        .btn:hover {
-            background: #FFB18A;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 158, 109, 0.5);
-        }
 
         /* Section Styles */
         section {
@@ -721,9 +701,24 @@
 
 <!-- Hero Section -->
 <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero">
-    <div class="hero-background">
-        <img src="pot.jpg" alt="Innovation Mahakumbha Background">
+    <div class="hero-slider">
+        <!-- First slide (no link) -->
+        <div class="slide active">
+            <img src="pot.jpg" alt="Innovation Mahakumbha Background">
+            <!-- No link for this slide -->
+        </div>
+        <!-- Second slide (with link) -->
+        <div class="slide">
+            <img src="second-image.jpg" alt="Second Slide Image">
+            <a href="https://your-second-website-link.com" class="slide-link" target="_blank"></a>
+        </div>
+        <!-- Third slide (with link) -->
+        <div class="slide">
+            <img src="third-image.jpg" alt="Third Slide Image">
+            <a href="https://your-third-website-link.com" class="slide-link" target="_blank"></a>
+        </div>
     </div>
     <div class="container">
         <div class="hero-content">
@@ -1062,5 +1057,22 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             </div>
         </div>
     </footer>
+        <script>
+// Image slider functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    
+    // Function to show next slide
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    
+    // Change slide every 3 seconds
+    setInterval(nextSlide, 3000);
+});
+</script>
 </body>
 </html>
