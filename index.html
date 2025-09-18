@@ -132,26 +132,27 @@
         }
 
         .slide-link {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            z-index: 2;
-            cursor: pointer;
-        }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 4; /* higher so link is above overlay */
+}
 
-        .hero-slider::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 3;
-        }
+
+      .hero-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    pointer-events: none;  /* overlay won’t block clicks */
+}
 
         /* Slider Navigation */
         .slider-nav {
@@ -775,13 +776,13 @@
         </div>
         <!-- Second slide (with link) -->
        <div class="slide">
-    <a href="innovation_mahakumbh2/event-details.html" class="slide-link" target="_blank">
+    <a href="event-details.html" class="slide-link" target="_blank">
         <img src="event-details.png" alt="Second Slide Image">
     </a>
 </div>
         <!-- Third slide (with link) -->
        <div class="slide">
-    <a href="innovation_mahakumbh2/pre-detail.html" class="slide-link" target="_blank">
+    <a href="pre-detail.html" class="slide-link" target="_blank">
         <img src="pre-detail.png" alt="Third Slide Image">
     </a>
 </div>
