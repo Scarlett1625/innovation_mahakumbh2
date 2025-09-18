@@ -199,6 +199,62 @@
             box-shadow: 0 10px 20px rgba(255, 158, 109, 0.5);
         }
 
+        /* Slider Navigation */
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 6;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 6;
+            transform: translateY(-50%);
+        }
+
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .arrow:hover {
+            background: rgba(255, 255, 255, 0.7);
+            color: #FF6B6B;
+        }
+
         /* Section Styles */
         section {
             padding: 40px 0;
@@ -630,6 +686,16 @@
             .logo-image img {
                 height: 60px;
             }
+            
+            .slider-arrows {
+                padding: 0 10px;
+            }
+            
+            .arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+            }
         }
 
         /* ===== Vision Section Styles ===== */
@@ -738,15 +804,28 @@
         </div>
         <!-- Second slide (with link) -->
         <div class="slide">
-            <img src="event details new.png" alt="Second Slide Image">
-            <a href="event details.html" class="slide-link" target="_blank"></a>
+            <img src="second-image.jpg" alt="Second Slide Image">
+            <a href="https://your-second-website-link.com" class="slide-link" target="_blank"></a>
         </div>
         <!-- Third slide (with link) -->
         <div class="slide">
-            <img src="pre activities.png" alt="Third Slide Image">
-            <a href="pre detail.html" class="slide-link" target="_blank"></a>
+            <img src="third-image.jpg" alt="Third Slide Image">
+            <a href="https://your-third-website-link.com" class="slide-link" target="_blank"></a>
         </div>
     </div>
+    
+    <!-- Slider Navigation -->
+    <div class="slider-arrows">
+        <div class="arrow prev">❮</div>
+        <div class="arrow next">❯</div>
+    </div>
+    
+    <div class="slider-nav">
+        <div class="slider-dot active" data-index="0"></div>
+        <div class="slider-dot" data-index="1"></div>
+        <div class="slider-dot" data-index="2"></div>
+    </div>
+    
     <div class="container">
         <div class="hero-content">
             <h2>INNOVATION MAHAKUMBHA</h2>
@@ -1082,24 +1161,52 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             </div>
         </div>
     </footer>
-
-    <!-- Image Slider JavaScript -->
     <script>
-    // Image slider functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
+// Manual image slider functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevArrow = document.querySelector('.arrow.prev');
+    const nextArrow = document.querySelector('.arrow.next');
+    let currentSlide = 0;
+    
+    // Function to show a specific slide
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
         
-        // Function to show next slide
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
+        // Show the selected slide
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
         
-        // Change slide every 3 seconds
-        setInterval(nextSlide, 3000);
+        currentSlide = index;
+    }
+    
+    // Next slide function
+    function nextSlide() {
+        let nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+    }
+    
+    // Previous slide function
+    function prevSlide() {
+        let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+    }
+    
+    // Event listeners for arrows
+    nextArrow.addEventListener('click', nextSlide);
+    prevArrow.addEventListener('click', prevSlide);
+    
+    // Event listeners for dots
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            let slideIndex = parseInt(this.getAttribute('data-index'));
+            showSlide(slideIndex);
+        });
     });
-    </script>
-</body>
+});
+</script>
+    </body>
 </html>
