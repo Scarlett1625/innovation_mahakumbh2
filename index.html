@@ -1125,7 +1125,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             </div>
         </div>
     </footer>
-    <script>
+   <script>
 // Manual image slider functionality
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slide');
@@ -1168,6 +1168,13 @@ document.addEventListener('DOMContentLoaded', function() {
         dot.addEventListener('click', function() {
             let slideIndex = parseInt(this.getAttribute('data-index'));
             showSlide(slideIndex);
+        });
+    });
+
+    // ADD THIS CODE RIGHT HERE - Fix for clickable links in slides
+    document.querySelectorAll('.slide-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.stopPropagation(); // This prevents the slider JavaScript from interfering
         });
     });
 });
