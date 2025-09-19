@@ -1202,22 +1202,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Auto slide functionality (optional)
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    }
     
-    function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-    }
-    
-    // Start auto sliding
-    startAutoSlide();
-    
-    // Pause auto sliding when user interacts with slider
-    const slider = document.querySelector('.hero-slider');
-    slider.addEventListener('mouseenter', stopAutoSlide);
-    slider.addEventListener('mouseleave', startAutoSlide);
 });
 </script>
 </body>
