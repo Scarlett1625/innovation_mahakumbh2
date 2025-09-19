@@ -745,6 +745,79 @@
             font-size: 2.5rem;
             margin-bottom: 15px;
         }
+        /* === Dropdown Menu Styles === */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #FF6B6B;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* === Leadership Page Card Styles === */
+.leaders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.leader-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
+  padding: 20px;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
+}
+
+.leader-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.leader-card h3 {
+  color: #FF6B6B;
+  margin-bottom: 10px;
+}
+
+.leader-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
     </style>
 </head>
 <body>
