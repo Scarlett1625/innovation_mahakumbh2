@@ -772,11 +772,12 @@
   padding: 10px 20px;
   color: white;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease-in-out; /* Changed to animate all properties */
 }
-
 .dropdown-menu li a:hover {
-  background: rgba(255,255,255,0.2);
+  color: #FFDECF; /* Changes text to a light, glowing orange */
+  background: none; /* Removes the background color change */
+  transform: translateX(5px); /* Adds a subtle slide effect */
 }
 
 /* === Leadership Page Card Styles === */
