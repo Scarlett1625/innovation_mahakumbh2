@@ -29,7 +29,7 @@
 
         /* Header Styles */
         header {
-            background: #ffffff; /* This makes the header background white */
+            background: #ffffff;
             padding: 10px 0;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: sticky;
@@ -66,7 +66,8 @@
 
         /* --- DESKTOP NAVIGATION STYLES --- */
         .desktop-navigation {
-            display: none; /* Hidden on mobile by default */
+            display: none;
+            /* Hidden on mobile by default */
         }
 
         /* Hero Section */
@@ -424,8 +425,10 @@
         
         .social-icons { display: flex; gap: 15px; margin-top: 20px; }
         .social-icons a {
-            display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;
-            background: rgba(255, 255, 255, 0.2); border-radius: 50%; color: white; transition: all 0.3s ease;
+            display: flex;
+            align-items: center; justify-content: center; width: 40px; height: 40px;
+            background: rgba(255, 255, 255, 0.2); border-radius: 50%; color: white;
+            transition: all 0.3s ease;
         }
         .social-icons a:hover { background: #FFEFEF; color: #FF6B6B; transform: translateY(-3px); }
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
@@ -435,14 +438,16 @@
         .vision-section .section-title p { font-size: 1.2rem; color: #555; margin-bottom: 40px; }
         .vision-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
         .vision-circle {
-            width: 200px; height: 200px; border-radius: 50%; background: #FF6B6B; color: white; display: flex;
+            width: 200px;
+            height: 200px; border-radius: 50%; background: #FF6B6B; color: white; display: flex;
             align-items: center; justify-content: center; font-size: 2rem; font-weight: bold;
             box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2); transition: transform 0.3s ease;
         }
         .vision-circle:hover { transform: scale(1.05); }
         .vision-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
         .vision-item {
-            background: white; padding: 20px 30px; border-radius: 10px;
+            background: white;
+            padding: 20px 30px; border-radius: 10px;
             box-shadow: 0 10px 25px rgba(255, 107, 107, 0.15); width: 250px; text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -465,17 +470,21 @@
         .search-form button { background: transparent; border: none; color: white; padding: 0 15px; cursor: pointer; font-size: 1.1rem; }
 
         .mobile-nav-toggle {
-            background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer;
+            background: none;
+            border: none; color: white; font-size: 1.8rem; cursor: pointer;
             margin-left: 20px; z-index: 1001;
         }
         .mobile-nav-toggle[aria-expanded="true"] i::before {
-            content: '\f00d'; position: fixed; top: 15px; right: 25px;
+            content: '\f00d';
+            position: fixed; top: 15px; right: 25px;
         }
 
         .primary-navigation {
-            position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100%;
+            position: fixed;
+            top: 0; right: -100%; width: 80%; max-width: 350px; height: 100%;
             background: #333; z-index: 1000; transition: right 350ms ease-out;
-            padding: 20px; overflow-y: auto;
+            padding: 20px;
+            overflow-y: auto;
         }
         .primary-navigation[data-visible="true"] { right: 0; }
         .primary-navigation .nav-list { list-style: none; padding: 0; margin: 50px 0 0 0; display: flex; flex-direction: column; gap: 15px; }
@@ -485,7 +494,8 @@
         
         /* Mobile Dropdown */
         .primary-navigation .dropdown-menu {
-            position: static; display: block; background: none; box-shadow: none;
+            position: static;
+            display: block; background: none; box-shadow: none;
             padding: 0 0 0 20px;
         }
 
@@ -494,11 +504,13 @@
         /* DESKTOP STYLES */
         @media (min-width: 769px) {
             .top-bar {
-                display: none; /* This hides the mobile search/hamburger bar on desktop */
+                display: none;
+                /* This hides the mobile search/hamburger bar on desktop */
             }
 
             .desktop-navigation {
-                display: block; /* This shows the desktop navigation links */
+                display: block;
+                /* This shows the desktop navigation links */
             }
 
             .desktop-navigation ul {
@@ -510,7 +522,8 @@
             }
 
             .desktop-navigation ul li a {
-                color: #F57C00; /* This makes the links orange */
+                color: #F57C00;
+                /* This makes the links orange */
                 text-decoration: none;
                 font-weight: 600;
                 font-size: 1rem;
@@ -519,7 +532,8 @@
             }
 
             .desktop-navigation ul li a:hover {
-                color: #E65100; /* Darker orange on hover */
+                color: #E65100;
+                /* Darker orange on hover */
             }
             
             .desktop-navigation .dropdown {
@@ -582,9 +596,7 @@
 </head>
 <body>
 
-<!-- Header -->
 <header>
-    <!-- TOP BAR - ONLY FOR MOBILE -->
     <div class="top-bar">
         <form class="search-form" action="#" method="get">
             <input type="search" name="q" placeholder="Enter terms then hit Search...">
@@ -595,7 +607,6 @@
         </button>
     </div>
 
-    <!-- MAIN HEADER AREA - FOR LOGO AND DESKTOP NAV -->
     <div class="container">
         <div class="header-desktop-content">
             <div class="logo">
@@ -604,7 +615,6 @@
                 </div>
             </div>
             
-            <!-- DESKTOP NAVIGATION -->
             <nav class="desktop-navigation">
                 <ul>
                     <li class="dropdown">
@@ -616,7 +626,6 @@
                     </li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
                     <li><a href="#event">Event Details</a></li>
-                    <li><a href="#registration">Register</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -624,7 +633,6 @@
     </div>
 </header>
 
-<!-- MOBILE SIDE PANEL NAVIGATION -->
 <nav id="primary-navigation" class="primary-navigation" data-visible="false">
     <ul class="nav-list">
         <li class="nav-title">Menu</li>
@@ -637,12 +645,10 @@
         </li>
         <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
         <li><a href="#event">Event Details</a></li>
-        <li><a href="#registration">Register</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<!-- Hero Section -->
 <section class="hero">
   <div class="hero-slider">
     <div class="slide active">
@@ -670,7 +676,6 @@
   </div>
 </section>
 
-<!-- About Section -->
 <section id="about" class="about">
     <div class="container">
         <div class="section-title">
@@ -690,10 +695,9 @@
     </div>
 </section>
 
-<!-- Vision Section -->
 <section id="vision" class="vision-section">
     <div class="container">
-        <div class="section-title">
+         <div class="section-title">
             <h2>Our Vision</h2>
             <p>Inspiring innovation, creativity, and collaboration</p>
         </div>
@@ -701,12 +705,12 @@
             
             <div class="vision-items">
                 <div class="vision-item">
-                    <div class="icon">🧠</div>
+                     <div class="icon">🧠</div>
                     <p>Encourage new ideas</p>
                 </div>
                 <div class="vision-item">
                     <div class="icon">💡</div>
-                    <p>Unleash creativity by learning and sharing</p>
+                     <p>Unleash creativity by learning and sharing</p>
                 </div>
                 <div class="vision-item">
                     <div class="icon">🤝</div>
@@ -717,7 +721,6 @@
     </div>
 </section>
     
-<!-- Event Details -->
 <section id="event" class="event-details">
     <div class="container">
         <div class="section-title">
@@ -737,10 +740,9 @@
     </div>
 </section>
 
-<!-- Pre Activities Section -->
 <section id="pre-activities" class="workshop-highlights">
     <div class="container">
-        <div class="section-title">
+         <div class="section-title">
             <h2>Pre Activities</h2>
             <p>Engaging teachers and students through impactful initiatives</p>
         </div>
@@ -752,14 +754,13 @@
     </div>
 </section>
     
-<!-- Flagship Showcases Section -->
 <section id="showcases" class="showcases">
     <div class="container">
         <div class="section-title">
             <h2>Flagship Showcases</h2>
             <p>Innovative applications solving real-world problems using AI</p>
         </div>
-        <div class="cards-container">
+         <div class="cards-container">
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-heartbeat"></i></div><h3>Mental Health AI</h3><p>Solutions designed for emotional well-being and support.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-pills"></i></div><h3>Pharmacopeia AI</h3><p>Advancements in medicine and healthcare for a better tomorrow.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-spa"></i></div><h3>Spiritual AI</h3><p>AI-driven tools for personal growth, mindfulness, and balance.</p></div></div>
@@ -770,14 +771,13 @@
     </div>
 </section>
 
-<!-- Student Integration Section -->
 <section id="integration" class="student-integration">
     <div class="container">
         <div class="section-title">
             <h2>Student Integration</h2>
             <p>Where learning meets innovation</p>
         </div>
-        <div class="about-content">
+         <div class="about-content">
             <div class="about-text">
                 <p><strong>Over 10,000 students and teachers</strong> will actively participate by visiting departments and engaging in hands-on activities.</p>
                 <p>They will learn how to apply academic subjects to create <strong>Agentic AI-based projects</strong>.</p>
@@ -790,51 +790,23 @@
     </div>
 </section>
 
-<!-- Registration Section -->
-<section id="registration" class="registration">
-    <div class="container">
-        <div class="section-title">
-            <h2>Registration</h2>
-            <p>Register your innovative project for Innovation Mahakumbha 2025</p>
-        </div>
-        <div class="form-container">
-            <form id="registrationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdHEDzYqnJ_-CHgXIAkCit7Bf0ZtLjbDnIhOAzBS9mok2kN3w/formResponse" method="POST" target="_blank">
-                <div class="form-group"><label for="name">Student Name *</label><input type="text" id="name" name="entry.2059202553" placeholder="Enter your full name" required></div>
-                <div class="form-group"><label for="institute">Institute Name *</label><input type="text" id="institute" name="entry.321446764" placeholder="Enter your institute name" required></div>
-                <div class="form-group"><label for="address">Institute Address</label><input type="text" id="address" name="entry.815205745" placeholder="Enter your institute address"></div>
-                <div class="form-group"><label for="course">Course/Programme</label><input type="text" id="course" name="entry.326791882" placeholder="Enter your course/programme"></div>
-                <div class="form-group"><label for="year">Current Class/Year</label><input type="text" id="year" name="entry.1871125218" placeholder="Enter your current class/year"></div>
-                <div class="form-group"><label for="innovation">Title of Innovation *</label><input type="text" id="innovation" name="entry.2051221376" placeholder="Enter the title of your innovation" required></div>
-                <div class="form-group"><label for="participants">Number of Students Presenting</label><input type="number" id="participants" name="entry.939722510" placeholder="Enter number of participants" min="1"></div>
-                <div class="form-group"><label for="phone">Contact Number</label><input type="tel" id="phone" name="entry.1867674530" placeholder="Enter your contact number"></div>
-                <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="entry.207012558" placeholder="Enter your email address" required></div>
-                <input type="hidden" name="fvv" value="1"><input type="hidden" name="pageHistory" value="0">
-                <button type="submit" class="btn">Submit Registration</button>
-            </form>
-            <div id="successMessage" style="display: none; background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-top: 20px;"><i class="fas fa-check-circle"></i> Registration submitted successfully!</div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
 <footer id="contact">
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
-                <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
+                 <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
                 <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#about">About</a></li>
+                     <li><a href="#about">About</a></li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
                     <li><a href="#event">Event Details</a></li>
-                    <li><a href="#registration">Registration</a></li>
                 </ul>
-            </div>
+             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <p>Stay updated with the latest news</p>
@@ -845,7 +817,7 @@
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-        </div>
+         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 SNDT Women's University. All Rights Reserved.</p>
         </div>
@@ -907,39 +879,8 @@
                 resetInterval();
             });
         });
-
-        // --- Registration Form ---
-        const regForm = document.getElementById('registrationForm');
-        if(regForm) {
-            regForm.addEventListener('submit', function(e) {
-                const requiredFields = this.querySelectorAll('[required]');
-                let isValid = true;
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        field.style.borderColor = 'red';
-                        isValid = false;
-                    } else {
-                        field.style.borderColor = '#ddd';
-                    }
-                });
-                
-                if (!isValid) {
-                    e.preventDefault();
-                    // Switched from alert to a less intrusive notification if possible, but alert is simple
-                    // For now, keeping alert as per original code's simplicity.
-                    // A proper implementation would use a custom modal.
-                    console.error('Please fill all required fields.');
-                } else {
-                    setTimeout(() => {
-                        document.getElementById('successMessage').style.display = 'block';
-                        this.reset();
-                    }, 1000);
-                }
-            });
-        }
     });
 </script>
 
 </body>
 </html>
-
