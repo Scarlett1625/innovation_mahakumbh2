@@ -331,62 +331,7 @@
             font-size: 1.4rem;
             margin-bottom: 15px;
         }
-
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.1);
-        }
         
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #FF6B6B;
-        }
-        
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none;
-            border-color: #FF6B6B;
-            box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #FF9E6D;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(255, 158, 109, 0.4);
-        }
-
-        .btn:hover {
-            background: #FFB18A;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 158, 109, 0.5);
-        }
-
         footer {
             background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
             color: white;
@@ -437,22 +382,36 @@
         .vision-section .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; color: #FF6B6B; }
         .vision-section .section-title p { font-size: 1.2rem; color: #555; margin-bottom: 40px; }
         .vision-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
-        .vision-circle {
-            width: 200px;
-            height: 200px; border-radius: 50%; background: #FF6B6B; color: white; display: flex;
-            align-items: center; justify-content: center; font-size: 2rem; font-weight: bold;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2); transition: transform 0.3s ease;
-        }
-        .vision-circle:hover { transform: scale(1.05); }
-        .vision-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
-        .vision-item {
+
+        /* MODIFIED: This is now the single large box */
+        .vision-items { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-around; /* Better spacing for items inside */
+            gap: 40px;
+            width: 100%;
             background: white;
-            padding: 20px 30px; border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.15); width: 250px; text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 40px; /* Increased padding */
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.15);
         }
-        .vision-item:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2); }
-        .vision-item .icon { font-size: 2.5rem; margin-bottom: 15px; }
+
+        /* MODIFIED: This now styles the content inside the box */
+        .vision-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+            flex: 1; /* Allows items to grow and shrink */
+            min-width: 200px; /* Prevents items from becoming too narrow */
+        }
+        
+        .vision-item:hover { 
+            transform: translateY(-10px); 
+        }
+
+        .vision-item .icon { 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+        }
 
         /* === MOBILE-FIRST HEADER STYLES === */
         .top-bar {
@@ -505,12 +464,10 @@
         @media (min-width: 769px) {
             .top-bar {
                 display: none;
-                /* This hides the mobile search/hamburger bar on desktop */
             }
 
             .desktop-navigation {
                 display: block;
-                /* This shows the desktop navigation links */
             }
 
             .desktop-navigation ul {
@@ -523,7 +480,6 @@
 
             .desktop-navigation ul li a {
                 color: #F57C00;
-                /* This makes the links orange */
                 text-decoration: none;
                 font-weight: 600;
                 font-size: 1rem;
@@ -533,7 +489,6 @@
 
             .desktop-navigation ul li a:hover {
                 color: #E65100;
-                /* Darker orange on hover */
             }
             
             .desktop-navigation .dropdown {
@@ -607,6 +562,7 @@
         </button>
     </div>
 
+ 
     <div class="container">
         <div class="header-desktop-content">
             <div class="logo">
@@ -614,19 +570,24 @@
                     <img src="naac.jpg" alt="SNDT Women's University Logo">
                 </div>
             </div>
+    
             
             <nav class="desktop-navigation">
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
-                        <a href="#about">About ▾</a>
+                     
+   <a href="#about">About ▾</a>
                         <ul class="dropdown-menu">
                             <li><a href="leadership.html">Messages from Leadership</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
-                        </ul>
+          
+               </ul>
                     </li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
                     <li><a href="#event">Event Details</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a 
+href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -636,9 +597,11 @@
 <nav id="primary-navigation" class="primary-navigation" data-visible="false">
     <ul class="nav-list">
         <li class="nav-title">Menu</li>
+        <li><a href="index.html">Home</a></li>
         <li class="dropdown">
             <a href="#">About ▾</a>
-            <ul class="dropdown-menu">
+           
+     <ul class="dropdown-menu">
                 <li><a href="leadership.html">Messages from Leadership</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
             </ul>
@@ -651,7 +614,8 @@
 
 <section class="hero">
   <div class="hero-slider">
-    <div class="slide active">
+    
+<div class="slide active">
       <img src="pot2.png" alt="Innovation Mahakumbha Background">
     </div>
     <div class="slide">
@@ -665,7 +629,8 @@
       </a>
     </div>
     <div class="slider-arrows">
-      <div class="arrow prev">❮</div>
+      <div 
+class="arrow prev">❮</div>
       <div class="arrow next">❯</div>
     </div>
     <div class="slider-nav">
@@ -681,7 +646,8 @@
         <div class="section-title">
             <h2>About Innovation Mahakumbha</h2>
             <p>MEGA SHOWCASE OF INNOVATION & TALENT</p>
-        </div>
+    
+     </div>
         <div class="about-content">
             <div class="about-text">
                 <p><strong>SNDT Women’s University</strong> proudly presents - <strong>Innovation Mahakumbha</strong> – an exhibition of student-led innovative projects from across its departments, conducted and affiliated institutions. This initiative attempts to provide a unique platform to all its stakeholders for creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
@@ -697,7 +663,8 @@
 
 <section id="vision" class="vision-section">
     <div class="container">
-         <div class="section-title">
+         <div 
+class="section-title">
             <h2>Our Vision</h2>
             <p>Inspiring innovation, creativity, and collaboration</p>
         </div>
@@ -705,17 +672,20 @@
             
             <div class="vision-items">
                 <div class="vision-item">
-                     <div class="icon">🧠</div>
+            
+                  <div class="icon">🧠</div>
                     <p>Encourage new ideas</p>
                 </div>
                 <div class="vision-item">
                     <div class="icon">💡</div>
-                     <p>Unleash creativity by learning and sharing</p>
+              
+              <p>Unleash creativity by learning and sharing</p>
                 </div>
                 <div class="vision-item">
                     <div class="icon">🤝</div>
                     <p>Collaboration and networking</p>
-                </div>
+            
+             </div>
             </div>
         </div>
     </div>
@@ -728,7 +698,8 @@
             <p>Join us for this celebration of innovation and entrepreneurship</p>
         </div>
         <div class="details-grid">
-            <div class="detail-box"><i class="fas fa-lightbulb"></i><h3>Innovation Stalls</h3><p>Students showcase projects in dedicated stalls</p></div>
+  
+           <div class="detail-box"><i class="fas fa-lightbulb"></i><h3>Innovation Stalls</h3><p>Students showcase projects in dedicated stalls</p></div>
             <div class="detail-box"><i class="fas fa-chalkboard-teacher"></i><h3>Expert Assessment</h3><p>Experts assess projects and provide valuable feedback</p></div>
             <div class="detail-box"><i class="fas fa-seedling"></i><h3>Startup & Funding</h3><p>Explore opportunities for startups and funding</p></div>
             <div class="detail-box"><i class="fas fa-microphone"></i><h3>Talks & Workshops</h3><p>Entrepreneurs and investors conduct interactive sessions</p></div>
@@ -742,7 +713,8 @@
 
 <section id="pre-activities" class="workshop-highlights">
     <div class="container">
-         <div class="section-title">
+         <div 
+class="section-title">
             <h2>Pre Activities</h2>
             <p>Engaging teachers and students through impactful initiatives</p>
         </div>
@@ -760,7 +732,8 @@
             <h2>Flagship Showcases</h2>
             <p>Innovative applications solving real-world problems using AI</p>
         </div>
-         <div class="cards-container">
+         <div 
+class="cards-container">
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-heartbeat"></i></div><h3>Mental Health AI</h3><p>Solutions designed for emotional well-being and support.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-pills"></i></div><h3>Pharmacopeia AI</h3><p>Advancements in medicine and healthcare for a better tomorrow.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-spa"></i></div><h3>Spiritual AI</h3><p>AI-driven tools for personal growth, mindfulness, and balance.</p></div></div>
@@ -794,28 +767,33 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Contact Us</h3>
+   
+                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
                  <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
                 <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
             </div>
-            <div class="footer-section">
+        
+             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                      <li><a href="#about">About</a></li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
-                    <li><a href="#event">Event Details</a></li>
+                 
+                   <li><a href="#event">Event Details</a></li>
                 </ul>
              </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <p>Stay updated with the latest news</p>
-                <div class="social-icons">
+               
+                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+      
+                   </div>
             </div>
          </div>
         <div class="footer-bottom">
@@ -838,7 +816,8 @@
                 primaryNav.setAttribute('data-visible', true);
                 navToggle.setAttribute('aria-expanded', true);
             }
-        });
+     
+           });
 
         // --- Hero Slider ---
         const slides = document.querySelectorAll('.hero-slider .slide');
@@ -846,7 +825,8 @@
         const prevArrow = document.querySelector('.arrow.prev');
         const nextArrow = document.querySelector('.arrow.next');
         let currentSlide = 0;
-        let slideInterval = setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+        // Auto-slide every 5 seconds
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
@@ -884,3 +864,4 @@
 
 </body>
 </html>
+}
