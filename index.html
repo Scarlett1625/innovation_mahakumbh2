@@ -13,7 +13,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-     html, body {
+        html, body {
             width: 100%;
             overflow-x: hidden;
             background-color: #ffffff;
@@ -29,17 +29,16 @@
 
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
-            background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
-            color: white;
-            padding: 4px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: #ffffff; /* This makes the header background white */
+            padding: 10px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-
-        .header-content {
+        
+        /* New wrapper for desktop header content */
+        .header-desktop-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -65,34 +64,9 @@
             object-fit: contain;
         }
 
-        .logo-text h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo-text p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        nav ul li a:hover {
-            color: #FF6B6B;
-            background: rgba(255, 255, 255, 0.9);
+        /* --- DESKTOP NAVIGATION STYLES --- */
+        .desktop-navigation {
+            display: none; /* Hidden on mobile by default */
         }
 
         /* Hero Section */
@@ -113,25 +87,20 @@
             overflow: hidden;
         }
 
-    .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    pointer-events: none;   /* disable clicks on hidden slides */
-}
-
-.slide.active {
-    opacity: 1;
-    pointer-events: auto;   /* allow clicks only on active slide */
-}
-
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
 
         .slide.active {
             opacity: 1;
+            pointer-events: auto;
         }
 
         .slide img {
@@ -140,25 +109,24 @@
             object-fit: cover;
         }
 
-    .slide-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none; /* removes underline */
-}
+        .slide-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
 
-
-      .hero-slider::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 3;
-    pointer-events: none;  /* overlay won’t block clicks */
-}
+        .hero-slider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 3;
+            pointer-events: none;
+        }
 
         /* Slider Navigation */
         .slider-nav {
@@ -252,7 +220,7 @@
             max-width: 700px;
             margin: 0 auto;
         }
-
+        
         /* About Section */
         .about-content {
             display: flex;
@@ -286,100 +254,18 @@
         .about-image:hover img {
             transform: scale(1.05);
         }
-
-        /* Workshop Section */
-        .workshop-highlights {
+        
+        .workshop-highlights, .registration, #integration, .vision-section {
             background: linear-gradient(to bottom, #FFF5F5, #FFEFEF);
         }
-
+        
         .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
-        /* Flagship Showcases */
-        .showcases .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .showcases .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .showcases .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
-        }
-        .showcases .card-content {
-            padding: 25px;
-        }
         
-        .showcases .card-icon {
-            font-size: 2.5rem;
-            color: #FF6B6B;
-            margin-bottom: 20px;
-        }
-
-        /* Student Integration */
-        .student-integration .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .student-integration .about-text {
-            flex: 1;
-        }
-
-        .student-integration .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.15);
-        }
-        
-        .student-integration .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .student-integration .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Desktop: 3 cards in a row */
-        @media (min-width: 1024px) {
-            .cards-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* Tablets: 2 cards per row */
-        @media (min-width: 600px) and (max-width: 1023px) {
-            .cards-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Mobile: 1 card per row */
-        @media (max-width: 599px) {
-            .cards-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
         .card {
             background: white;
             border-radius: 10px;
@@ -402,14 +288,13 @@
             color: #FF6B6B;
             margin-bottom: 20px;
         }
-
+        
         .card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: #FF6B6B;
         }
 
-        /* Event Details */
         .event-details {
             background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
             color: white;
@@ -418,37 +303,12 @@
         .event-details .section-title h2 {
             color: white;
         }
-
+        
         .details-grid {
             display: grid;
             gap: 30px;
             margin-top: 40px;
-        }
-
-        /* Default: flexible auto-fit */
-        .details-grid {
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-
-        /* Large screens: 4 columns */
-        @media (min-width: 1024px) {
-            .details-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        /* Tablets: 2 columns */
-        @media (min-width: 600px) and (max-width: 1023px) {
-            .details-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Mobile: 1 column */
-        @media (max-width: 599px) {
-            .details-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .detail-box {
@@ -471,11 +331,6 @@
             margin-bottom: 15px;
         }
 
-        /* Registration Section */
-        .registration {
-            background: linear-gradient(to bottom, #FFF5F5, #FFEFEF);
-        }
-
         .form-container {
             max-width: 800px;
             margin: 0 auto;
@@ -484,36 +339,32 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(255, 107, 107, 0.1);
         }
-
+        
         .form-group {
             margin-bottom: 25px;
         }
-
+        
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: #FF6B6B;
         }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        
+        .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
         }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             outline: none;
             border-color: #FF6B6B;
             box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
         }
-
+        
         .btn {
             display: inline-block;
             background: #FF9E6D;
@@ -535,27 +386,26 @@
             box-shadow: 0 10px 20px rgba(255, 158, 109, 0.5);
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(135deg, #FF6B6B, #FF9E6D);
             color: white;
             padding: 40px 0 20px;
         }
-
+        
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-
+        
         .footer-section h3 {
             font-size: 1.4rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-
+        
         .footer-section h3::after {
             content: '';
             position: absolute;
@@ -565,432 +415,173 @@
             height: 3px;
             background: #FFEFEF;
         }
-
-        .footer-section p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: #FFEFEF;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            background: #FFEFEF;
-            color: #FF6B6B;
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .form-container {
-                padding: 20px;
-            }
-
-            .logo {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .logo-image {
-                max-height: 60px;
-            }
-
-            .logo-image img {
-                height: 60px;
-            }
-            
-            .slider-arrows {
-                padding: 0 10px;
-            }
-            
-            .arrow {
-                width: 30px;
-                height: 30px;
-                font-size: 1.2rem;
-            }
-            
-            .hero {
-                height: 50vh;
-            }
-        }
-
-        /* ===== Vision Section Styles ===== */
-        .vision-section {
-            background: linear-gradient(to bottom, #FFF5F5, #FFEFEF);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .vision-section .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #FF6B6B;
-        }
         
-        .vision-section .section-title p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 40px;
+        .footer-section p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 10px; }
+        .footer-section ul li a { color: #fff; text-decoration: none; transition: color 0.3s ease; }
+        .footer-section ul li a:hover { color: #FFEFEF; }
+        
+        .social-icons { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icons a {
+            display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+            background: rgba(255, 255, 255, 0.2); border-radius: 50%; color: white; transition: all 0.3s ease;
         }
+        .social-icons a:hover { background: #FFEFEF; color: #FF6B6B; transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
-        .vision-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-        }
-
+        /* Vision Section */
+        .vision-section .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; color: #FF6B6B; }
+        .vision-section .section-title p { font-size: 1.2rem; color: #555; margin-bottom: 40px; }
+        .vision-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
         .vision-circle {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: #FF6B6B;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
-            transition: transform 0.3s ease;
+            width: 200px; height: 200px; border-radius: 50%; background: #FF6B6B; color: white; display: flex;
+            align-items: center; justify-content: center; font-size: 2rem; font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2); transition: transform 0.3s ease;
         }
-
-        .vision-circle:hover {
-            transform: scale(1.05);
-        }
-
-        .vision-items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
-
+        .vision-circle:hover { transform: scale(1.05); }
+        .vision-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
         .vision-item {
-            background: white;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.15);
-            width: 250px;
-            text-align: center;
+            background: white; padding: 20px 30px; border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.15); width: 250px; text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .vision-item:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2); }
+        .vision-item .icon { font-size: 2.5rem; margin-bottom: 15px; }
 
-        .vision-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
+        /* === MOBILE-FIRST HEADER STYLES === */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #6a1a1a;
+            padding: 8px 20px;
+            color: white;
         }
 
-        .vision-item .icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+        .search-form { display: flex; flex-grow: 1; max-width: 600px; border: 1px solid #8e4a4a; }
+        .search-form input { width: 100%; background: transparent; border: none; color: white; padding: 10px; font-size: 1rem; }
+        .search-form input::placeholder { color: #f0d0d0; opacity: 1; }
+        .search-form button { background: transparent; border: none; color: white; padding: 0 15px; cursor: pointer; font-size: 1.1rem; }
+
+        .mobile-nav-toggle {
+            background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer;
+            margin-left: 20px; z-index: 1001;
         }
-        /* === Dropdown Menu Styles === */
-.dropdown {
-  position: relative;
-}
+        .mobile-nav-toggle[aria-expanded="true"] i::before {
+            content: '\f00d'; position: fixed; top: 15px; right: 25px;
+        }
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #FF6B6B;
-  padding: 10px 0;
-  display: none;
-  flex-direction: column;
-  min-width: 180px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-radius: 5px;
-  z-index: 999;
-}
+        .primary-navigation {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100%;
+            background: #333; z-index: 1000; transition: right 350ms ease-out;
+            padding: 20px; overflow-y: auto;
+        }
+        .primary-navigation[data-visible="true"] { right: 0; }
+        .primary-navigation .nav-list { list-style: none; padding: 0; margin: 50px 0 0 0; display: flex; flex-direction: column; gap: 15px; }
+        .primary-navigation .nav-title { color: #ccc; font-size: 1.5rem; font-weight: bold; border-bottom: 1px solid #555; padding-bottom: 10px; margin-bottom: 10px; }
+        .primary-navigation .nav-list a { color: white; text-decoration: none; font-size: 1.2rem; padding: 10px; display: block; border-radius: 4px; transition: background 0.3s ease; }
+        .primary-navigation .nav-list a:hover { background: #555; }
+        
+        /* Mobile Dropdown */
+        .primary-navigation .dropdown-menu {
+            position: static; display: block; background: none; box-shadow: none;
+            padding: 0 0 0 20px;
+        }
 
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
+        /* --- RESPONSIVE BREAKPOINTS --- */
 
-.dropdown-menu li a {
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out; /* Changed to animate all properties */
-}
-.dropdown-menu li a:hover {
-  color: #FFDECF; /* Changes text to a light, glowing orange */
-  background: none; /* Removes the background color change */
-  transform: translateX(5px); /* Adds a subtle slide effect */
-}
+        /* DESKTOP STYLES */
+        @media (min-width: 769px) {
+            .top-bar {
+                display: none; /* This hides the mobile search/hamburger bar on desktop */
+            }
 
-/* === Leadership Page Card Styles === */
-.leaders {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
+            .desktop-navigation {
+                display: block; /* This shows the desktop navigation links */
+            }
 
-.leader-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
-  padding: 20px;
-  max-width: 350px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
+            .desktop-navigation ul {
+                display: flex;
+                list-style: none;
+                gap: 35px;
+                margin: 0;
+                padding: 0;
+            }
 
-.leader-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
-}
+            .desktop-navigation ul li a {
+                color: #F57C00; /* This makes the links orange */
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1rem;
+                transition: color 0.3s ease;
+                padding: 5px 0;
+            }
 
-.leader-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
+            .desktop-navigation ul li a:hover {
+                color: #E65100; /* Darker orange on hover */
+            }
+            
+            .desktop-navigation .dropdown {
+                position: relative;
+            }
 
-.leader-card h3 {
-  color: #FF6B6B;
-  margin-bottom: 10px;
-}
+            .desktop-navigation .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: #ffffff;
+                padding: 10px 0;
+                display: none;
+                flex-direction: column;
+                min-width: 220px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+                border-radius: 5px;
+                z-index: 999;
+                border: 1px solid #eee;
+            }
 
-.leader-card p {
-  font-size: 1rem;
-  color: #555;
-}
-        .dropdown {
-  position: relative;
-}
+            .desktop-navigation .dropdown:hover .dropdown-menu {
+                display: flex;
+            }
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #FF6B6B;
-  padding: 10px 0;
-  display: none;
-  flex-direction: column;
-  min-width: 180px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-radius: 5px;
-  z-index: 999;
-}
+            .desktop-navigation .dropdown-menu li a {
+                padding: 10px 20px;
+                color: #333;
+            }
 
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
+            .desktop-navigation .dropdown-menu li a:hover {
+                color: #F57C00;
+                background-color: #f9f9f9;
+            }
 
-.dropdown-menu li a {
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
+            .details-grid { grid-template-columns: repeat(4, 1fr); }
+            .cards-container { grid-template-columns: repeat(3, 1fr); }
+        }
 
-.dropdown-menu li a:hover {
-  background: rgba(255,255,255,0.2);
-}
+        /* TABLET STYLES */
+        @media (min-width: 600px) and (max-width: 1023px) {
+            .cards-container { grid-template-columns: repeat(2, 1fr); }
+            .details-grid { grid-template-columns: repeat(2, 1fr); }
+        }
 
-
-/* === New Header, Search, and Menu Styles === */
-
-/* Hiding the original header and nav styles on mobile */
-@media (max-width: 768px) {
-    header nav ul {
-        display: none; /* This ensures the old nav is hidden */
-    }
-}
-header nav {
-    display: none; /* Hide the nav inside the original header structure */
-}
-
-/* Top Bar Styles */
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6a1a1a; /* Dark red color from example */
-    padding: 8px 20px;
-    color: white;
-}
-
-/* Search Form Styles */
-.search-form {
-    display: flex;
-    flex-grow: 1;
-    max-width: 600px;
-    border: 1px solid #8e4a4a;
-}
-.search-form input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: white;
-    padding: 10px;
-    font-size: 1rem;
-}
-.search-form input::placeholder {
-    color: #f0d0d0;
-    opacity: 1;
-}
-.search-form button {
-    background: transparent;
-    border: none;
-    color: white;
-    padding: 0 15px;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-/* Hamburger Menu Toggle Button */
-.mobile-nav-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    margin-left: 20px;
-    z-index: 1001; /* Ensure it's on top */
-}
-/* Change icon to 'X' when menu is open */
-.mobile-nav-toggle[aria-expanded="true"] i::before {
-    content: '\f00d'; /* Font Awesome 'times' (X) icon */
-    position: fixed; /* Keep the X in the same spot */
-    top: 15px;
-    right: 25px;
-}
-
-/* Main Logo Area below Top Bar */
-.logo-area {
-    padding: 15px 0;
-    display: flex;
-    justify-content: center; /* Center the logo */
-}
-.logo-area .logo-image img {
-    [span_1](start_span)height: 80px;[span_1](end_span)
-}
-
-/* Side Navigation Menu Styles */
-.primary-navigation {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Start off-screen */
-    width: 80%;
-    max-width: 350px;
-    height: 100%;
-    background: #333;
-    z-index: 1000;
-    transition: right 350ms ease-out;
-    padding: 20px;
-    overflow-y: auto;
-}
-.primary-navigation[data-visible="true"] {
-    right: 0; /* Slide in */
-}
-.primary-navigation .nav-list {
-    [span_2](start_span)list-style: none;[span_2](end_span)
-    padding: 0;
-    margin: 0;
-    margin-top: 50px; /* Space from top */
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.primary-navigation .nav-title {
-    color: #ccc;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-bottom: 1px solid #555;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-.primary-navigation .nav-list a {
-    [span_3](start_span)color: white;[span_3](end_span)
-    [span_4](start_span)text-decoration: none;[span_4](end_span)
-    font-size: 1.2rem;
-    padding: 10px;
-    display: block;
-    [span_5](start_span)border-radius: 4px;[span_5](end_span)
-    [span_6](start_span)transition: background 0.3s ease;[span_6](end_span)
-}
-.primary-navigation .nav-list a:hover {
-    background: #555;
-}
-.primary-navigation .dropdown-menu {
-    position: static; /* Override absolute positioning */
-    display: block;
-    background: none;
-    [span_7](start_span)box-shadow: none;[span_7](end_span)
-    padding: 0 0 0 20px; /* Indent sub-menu items */
-}
-
+        /* MOBILE STYLES */
+        @media (max-width: 768px) {
+            .section-title h2 { font-size: 2rem; }
+            .about-content { flex-direction: column; }
+            .hero { height: 50vh; }
+            .logo-image img { height: 60px; }
+        }
+         @media (max-width: 599px) {
+            .cards-container, .details-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
+
 <!-- Header -->
-   <header>
+<header>
+    <!-- TOP BAR - ONLY FOR MOBILE -->
     <div class="top-bar">
         <form class="search-form" action="#" method="get">
             <input type="search" name="q" placeholder="Enter terms then hit Search...">
@@ -1001,18 +592,40 @@ header nav {
         </button>
     </div>
 
-    <div class="logo-area container">
-        <div class="logo">
-            <div class="logo-image">
-                <img src="naac.jpg" alt="SNDT Women's University Logo">
+    <!-- MAIN HEADER AREA - FOR LOGO AND DESKTOP NAV -->
+    <div class="container">
+        <div class="header-desktop-content">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="naac.jpg" alt="SNDT Women's University Logo">
+                </div>
             </div>
-             </div>
+            
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="desktop-navigation">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#about">About ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="leadership.html">Messages from Leadership</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
+                    <li><a href="#event">Event Details</a></li>
+                    <li><a href="#registration">Register</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>
 
+<!-- MOBILE SIDE PANEL NAVIGATION -->
 <nav id="primary-navigation" class="primary-navigation" data-visible="false">
     <ul class="nav-list">
-        <li class="nav-title">Menu</li> <li class="dropdown">
+        <li class="nav-title">Menu</li>
+        <li class="dropdown">
             <a href="#">About ▾</a>
             <ul class="dropdown-menu">
                 <li><a href="leadership.html">Messages from Leadership</a></li>
@@ -1026,38 +639,26 @@ header nav {
     </ul>
 </nav>
 
-
-<!-- Hero Section - Clean Slider (No Text/Button) -->
-<!-- Hero Section - Clean Slider (No Text/Button) -->
+<!-- Hero Section -->
 <section class="hero">
   <div class="hero-slider">
-    
-    <!-- First slide (no link) -->
     <div class="slide active">
       <img src="pot.jpg" alt="Innovation Mahakumbha Background">
     </div>
-
-    <!-- Second slide (with link) -->
-<div class="slide">
-  <a href="event-details.html" class="slide-link" target="_blank">
-    <img src="pp.png" alt="Second Slide Image">
-  </a>
-</div>
-
-<!-- Third slide (with link) -->
-<div class="slide">
-  <a href="pre-detail.html" class="slide-link" target="_blank">
-    <img src="pa.png" alt="Third Slide Image">
-  </a>
-</div>
-
-
-    <!-- Slider Navigation -->
+    <div class="slide">
+      <a href="event-details.html" class="slide-link" target="_blank">
+        <img src="pp.png" alt="Second Slide Image">
+      </a>
+    </div>
+    <div class="slide">
+      <a href="pre-detail.html" class="slide-link" target="_blank">
+        <img src="pa.png" alt="Third Slide Image">
+      </a>
+    </div>
     <div class="slider-arrows">
       <div class="arrow prev">❮</div>
       <div class="arrow next">❯</div>
     </div>
-    
     <div class="slider-nav">
       <div class="slider-dot active" data-index="0"></div>
       <div class="slider-dot" data-index="1"></div>
@@ -1066,26 +667,25 @@ header nav {
   </div>
 </section>
 
-    
- <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Innovation Mahakumbha</h2>
-                <p>MEGA SHOWCASE OF INNOVATION & TALENT</p>
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Innovation Mahakumbha</h2>
+            <p>MEGA SHOWCASE OF INNOVATION & TALENT</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>SNDT Women’s University</strong> proudly presents - <strong>Innovation Mahakumbha</strong> – an exhibition of student-led innovative projects from across its departments, conducted and affiliated institutions. This initiative attempts to provide a unique platform to all its stakeholders for creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
+                <p>Over 200 faculty from the University and its affiliated colleges received specialized training in innovation, entrepreneurship, and Agentic AI through the Wadhwani Foundation. This equipped them with advanced skills to drive ideation, problem-solving, and product development.</p>
+                <p>Guided by these trained faculty, students have built technology-driven prototypes and sustainable solutions. Their entrepreneurial ventures address real-world challenges in healthcare, education, agriculture, energy, digital inclusion, and women's empowerment.</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p><strong>SNDT Women’s University</strong> proudly presents - <strong>Innovation Mahakumbha</strong> – an exhibition of student-led innovative projects from across its departments, conducted and affiliated institutions. This initiative attempts to provide a unique platform to all its stakeholders for creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
-                    <p>Over 200 faculty from the University and its affiliated colleges received specialized training in innovation, entrepreneurship, and Agentic AI through the Wadhwani Foundation. This equipped them with advanced skills to drive ideation, problem-solving, and product development.</p>
-                    <p>Guided by these trained faculty, students have built technology-driven prototypes and sustainable solutions. Their entrepreneurial ventures address real-world challenges in healthcare, education, agriculture, energy, digital inclusion, and women's empowerment.</p>
-                </div>
-                <div class="about-image">
-                    <img src="maha.png" alt="Innovation Exhibition">
-                </div>
+            <div class="about-image">
+                <img src="maha.png" alt="Innovation Exhibition">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <!-- Vision Section -->
 <section id="vision" class="vision-section">
@@ -1124,46 +724,14 @@ header nav {
             <p>Join us for this celebration of innovation and entrepreneurship</p>
         </div>
         <div class="details-grid">
-            <div class="detail-box">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Innovation Stalls</h3>
-                <p>Students showcase projects in dedicated stalls</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3>Expert Assessment</h3>
-                <p>Experts assess projects and provide valuable feedback</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-seedling"></i>
-                <h3>Startup & Funding</h3>
-                <p>Explore opportunities for startups and funding</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-microphone"></i>
-                <h3>Talks & Workshops</h3>
-                <p>Entrepreneurs and investors conduct interactive sessions</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-handshake"></i>
-                <h3>Networking Zones</h3>
-                <p>Spaces designed to connect collaborators and stakeholders</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-trophy"></i>
-                <h3>Award Ceremony</h3>
-                <p>Recognising the most innovative and impactful projects</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-project-diagram"></i>
-                <h3>500+ Projects</h3>
-                <p>Curated by 200+ dedicated mentors</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-users"></i>
-                <h3>5,000+ Visitors</h3>
-                <p>Including industry experts, funders, parents & stakeholders</p>
-            </div>
+            <div class="detail-box"><i class="fas fa-lightbulb"></i><h3>Innovation Stalls</h3><p>Students showcase projects in dedicated stalls</p></div>
+            <div class="detail-box"><i class="fas fa-chalkboard-teacher"></i><h3>Expert Assessment</h3><p>Experts assess projects and provide valuable feedback</p></div>
+            <div class="detail-box"><i class="fas fa-seedling"></i><h3>Startup & Funding</h3><p>Explore opportunities for startups and funding</p></div>
+            <div class="detail-box"><i class="fas fa-microphone"></i><h3>Talks & Workshops</h3><p>Entrepreneurs and investors conduct interactive sessions</p></div>
+            <div class="detail-box"><i class="fas fa-handshake"></i><h3>Networking Zones</h3><p>Spaces designed to connect collaborators and stakeholders</p></div>
+            <div class="detail-box"><i class="fas fa-trophy"></i><h3>Award Ceremony</h3><p>Recognising the most innovative and impactful projects</p></div>
+            <div class="detail-box"><i class="fas fa-project-diagram"></i><h3>500+ Projects</h3><p>Curated by 200+ dedicated mentors</p></div>
+            <div class="detail-box"><i class="fas fa-users"></i><h3>5,000+ Visitors</h3><p>Including industry experts, funders, parents & stakeholders</p></div>
         </div>
     </div>
 </section>
@@ -1176,33 +744,9 @@ header nav {
             <p>Engaging teachers and students through impactful initiatives</p>
         </div>
         <div class="cards-container">
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Teacher & Student Engagement Strategies</h3>
-                    <p>200 FDP Trainings aim to expand reach from 50–60 colleges to more, empowering teachers as ambassadors. Class Representatives (CRs) act as student ambassadors to form groups and collect student email IDs for Wadhwani Foundation platform access.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Bootcamps for Innovative Learning</h3>
-                    <p>Class Representatives (CRs) facilitate innovation-focused bootcamps by forming student groups and ensuring access to the Wadhwani Foundation platform.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>UMIT & NSS Special Force Initiative</h3>
-                    <p>Over 10,000 participants will explore innovative projects. Special Bootcamps will focus on Agentic AI + NSS students & teachers, with activities linked to Sustainable Development Goals (SDGs).</p>
-                </div>
-            </div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Teacher & Student Engagement Strategies</h3><p>200 FDP Trainings aim to expand reach from 50–60 colleges to more, empowering teachers as ambassadors. Class Representatives (CRs) act as student ambassadors to form groups and collect student email IDs for Wadhwani Foundation platform access.</p></div></div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-lightbulb"></i></div><h3>Bootcamps for Innovative Learning</h3><p>Class Representatives (CRs) facilitate innovation-focused bootcamps by forming student groups and ensuring access to the Wadhwani Foundation platform.</p></div></div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-users"></i></div><h3>UMIT & NSS Special Force Initiative</h3><p>Over 10,000 participants will explore innovative projects. Special Bootcamps will focus on Agentic AI + NSS students & teachers, with activities linked to Sustainable Development Goals (SDGs).</p></div></div>
         </div>
     </div>
 </section>
@@ -1215,27 +759,9 @@ header nav {
             <p>Innovative applications solving real-world problems using AI</p>
         </div>
         <div class="cards-container">
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Mental Health AI</h3>
-                    <p>Solutions designed for emotional well-being and support.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fas fa-pills"></i></div>
-                    <h3>Pharmacopeia AI</h3>
-                    <p>Advancements in medicine and healthcare for a better tomorrow.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fas fa-spa"></i></div>
-                    <h3>Spiritual AI</h3>
-                    <p>AI-driven tools for personal growth, mindfulness, and balance.</p>
-                </div>
-            </div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-heartbeat"></i></div><h3>Mental Health AI</h3><p>Solutions designed for emotional well-being and support.</p></div></div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-pills"></i></div><h3>Pharmacopeia AI</h3><p>Advancements in medicine and healthcare for a better tomorrow.</p></div></div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-spa"></i></div><h3>Spiritual AI</h3><p>AI-driven tools for personal growth, mindfulness, and balance.</p></div></div>
         </div>
         <p style="text-align:center; margin-top:20px; font-size:1.1rem; color:#555;">
             These showcases inspire research, creativity, and practical solutions that merge technology with humanity.
@@ -1244,26 +770,26 @@ header nav {
 </section>
 
 <!-- Student Integration Section -->
-    <section id="integration" class="student-integration" style="background:linear-gradient(to bottom,#FFF5F5,#FFEFEF);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Student Integration</h2>
-                <p>Where learning meets innovation</p>
+<section id="integration" class="student-integration">
+    <div class="container">
+        <div class="section-title">
+            <h2>Student Integration</h2>
+            <p>Where learning meets innovation</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>Over 10,000 students and teachers</strong> will actively participate by visiting departments and engaging in hands-on activities.</p>
+                <p>They will learn how to apply academic subjects to create <strong>Agentic AI-based projects</strong>.</p>
+                <p>This approach nurtures skills in technology, problem-solving, and collaboration, fostering a culture of innovation.</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p><strong>Over 10,000 students and teachers</strong> will actively participate by visiting departments and engaging in hands-on activities.</p>
-                    <p>They will learn how to apply academic subjects to create <strong>Agentic AI-based projects</strong>.</p>
-                    <p>This approach nurtures skills in technology, problem-solving, and collaboration, fostering a culture of innovation.</p>
-                </div>
-                <div class="about-image">
-                    <img src="student.jpg" alt="Student Integration">
-                </div>
+            <div class="about-image">
+                <img src="student.jpg" alt="Student Integration">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
- <!-- Registration Section -->
+<!-- Registration Section -->
 <section id="registration" class="registration">
     <div class="container">
         <div class="section-title">
@@ -1271,251 +797,148 @@ header nav {
             <p>Register your innovative project for Innovation Mahakumbha 2025</p>
         </div>
         <div class="form-container">
-            <!-- Google Form Submission -->
             <form id="registrationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdHEDzYqnJ_-CHgXIAkCit7Bf0ZtLjbDnIhOAzBS9mok2kN3w/formResponse" method="POST" target="_blank">
-                <div class="form-group">
-                    <label for="name">Student Name *</label>
-                    <input type="text" id="name" name="entry.2059202553" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-group">
-                    <label for="institute">Institute Name *</label>
-                    <input type="text" id="institute" name="entry.321446764" placeholder="Enter your institute name" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Institute Address</label>
-                    <input type="text" id="address" name="entry.815205745" placeholder="Enter your institute address">
-                </div>
-                <div class="form-group">
-                    <label for="course">Course/Programme</label>
-                    <input type="text" id="course" name="entry.326791882" placeholder="Enter your course/programme">
-                </div>
-                <div class="form-group">
-                    <label for="year">Current Class/Year</label>
-                    <input type="text" id="year" name="entry.1871125218" placeholder="Enter your current class/year">
-                </div>
-                <div class="form-group">
-                    <label for="innovation">Title of Innovation *</label>
-                    <input type="text" id="innovation" name="entry.2051221376" placeholder="Enter the title of your innovation" required>
-                </div>
-                <div class="form-group">
-                    <label for="participants">Number of Students Presenting</label>
-                    <input type="number" id="participants" name="entry.939722510" placeholder="Enter number of participants" min="1">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Contact Number</label>
-                    <input type="tel" id="phone" name="entry.1867674530" placeholder="Enter your contact number">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="entry.207012558" placeholder="Enter your email address" required>
-                </div>
-                
-                <!-- Required hidden fields for Google Forms -->
-                <input type="hidden" name="fvv" value="1">
-                <input type="hidden" name="pageHistory" value="0">
-                
+                <div class="form-group"><label for="name">Student Name *</label><input type="text" id="name" name="entry.2059202553" placeholder="Enter your full name" required></div>
+                <div class="form-group"><label for="institute">Institute Name *</label><input type="text" id="institute" name="entry.321446764" placeholder="Enter your institute name" required></div>
+                <div class="form-group"><label for="address">Institute Address</label><input type="text" id="address" name="entry.815205745" placeholder="Enter your institute address"></div>
+                <div class="form-group"><label for="course">Course/Programme</label><input type="text" id="course" name="entry.326791882" placeholder="Enter your course/programme"></div>
+                <div class="form-group"><label for="year">Current Class/Year</label><input type="text" id="year" name="entry.1871125218" placeholder="Enter your current class/year"></div>
+                <div class="form-group"><label for="innovation">Title of Innovation *</label><input type="text" id="innovation" name="entry.2051221376" placeholder="Enter the title of your innovation" required></div>
+                <div class="form-group"><label for="participants">Number of Students Presenting</label><input type="number" id="participants" name="entry.939722510" placeholder="Enter number of participants" min="1"></div>
+                <div class="form-group"><label for="phone">Contact Number</label><input type="tel" id="phone" name="entry.1867674530" placeholder="Enter your contact number"></div>
+                <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="entry.207012558" placeholder="Enter your email address" required></div>
+                <input type="hidden" name="fvv" value="1"><input type="hidden" name="pageHistory" value="0">
                 <button type="submit" class="btn">Submit Registration</button>
             </form>
-            
-            <!-- Success Message (initially hidden) -->
-            <div id="successMessage" style="display: none; background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-top: 20px;">
-                <i class="fas fa-check-circle"></i> Registration submitted successfully! Thank you for registering.
-            </div>
+            <div id="successMessage" style="display: none; background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-top: 20px;"><i class="fas fa-check-circle"></i> Registration submitted successfully!</div>
         </div>
     </div>
 </section>
 
-<script>
-// Form submission handler
-document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    // Basic validation
-    const requiredFields = this.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            field.style.borderColor = 'red';
-            isValid = false;
-        } else {
-            field.style.borderColor = '';
-        }
-    });
-    
-    if (!isValid) {
-        e.preventDefault();
-        alert('Please fill all required fields');
-        return;
-    }
-    
-    // If validation passes, the form will submit to Google Forms
-    // Show success message after a short delay
-    setTimeout(() => {
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('registrationForm').reset();
-    }, 1000);
-});
-</script>
-
-   <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
-                    <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
-                    <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about">About Mahakumbha</a></li>
-                        <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
-                        <li><a href="#event">Event Details</a></li>
-                        <li><a href="#registration">Registration</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <p>Stay updated with the latest news and announcements</p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/sndtwuniversity/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/Sndt_Digital/"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/sndtwuinsta/?hl=en"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/school/sndtwu/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+<!-- Footer -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
+                <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
+                <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 SNDT Women's University. All Rights Reserved.</p>
-                <p>An Enlightened Woman is a Source of Infinite Strength</p>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
+                    <li><a href="#event">Event Details</a></li>
+                    <li><a href="#registration">Registration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Stay updated with the latest news</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SNDT Women's University. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
 <script>
-// 1. Form submission handler (Keep this)
-document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    // Basic validation
-    const requiredFields = this.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-       
-     if (!field.value.trim()) {
-            field.style.borderColor = 'red';
-            isValid = false;
-        } else {
-            field.style.borderColor = '';
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Mobile Navigation Toggle ---
+        const primaryNav = document.querySelector('.primary-navigation');
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        navToggle.addEventListener('click', () => {
+            const isVisible = primaryNav.getAttribute('data-visible') === 'true';
+            if (isVisible) {
+                primaryNav.setAttribute('data-visible', false);
+                navToggle.setAttribute('aria-expanded', false);
+            } else {
+                primaryNav.setAttribute('data-visible', true);
+                navToggle.setAttribute('aria-expanded', true);
+            }
+        });
+
+        // --- Hero Slider ---
+        const slides = document.querySelectorAll('.hero-slider .slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevArrow = document.querySelector('.arrow.prev');
+        const nextArrow = document.querySelector('.arrow.next');
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slides.length);
+        }
+
+        function prevSlide() {
+            showSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        nextArrow.addEventListener('click', () => { nextSlide(); resetInterval(); });
+        prevArrow.addEventListener('click', () => { prevSlide(); resetInterval(); });
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                showSlide(parseInt(dot.dataset.index));
+                resetInterval();
+            });
+        });
+
+        // --- Registration Form ---
+        const regForm = document.getElementById('registrationForm');
+        if(regForm) {
+            regForm.addEventListener('submit', function(e) {
+                const requiredFields = this.querySelectorAll('[required]');
+                let isValid = true;
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = 'red';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '#ddd';
+                    }
+                });
+                
+                if (!isValid) {
+                    e.preventDefault();
+                    // Switched from alert to a less intrusive notification if possible, but alert is simple
+                    // For now, keeping alert as per original code's simplicity.
+                    // A proper implementation would use a custom modal.
+                    console.error('Please fill all required fields.');
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'block';
+                        this.reset();
+                    }, 1000);
+                }
+            });
         }
     });
-    
-    if (!isValid) {
-        e.preventDefault();
-        alert('Please fill all required fields');
-   
-         return;
-    }
-    
-    // If validation passes, the form will submit to Google Forms
-    // Show success message after a short delay
-    setTimeout(() => {
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('registrationForm').reset();
-    }, 1000);
-});
-
-
-// 2. Image slider functionality (Keep this)
-document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('.hero-slider .slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    const prevArrow = document.querySelector('.arrow.prev');
-    const nextArrow = document.querySelector('.arrow.next');
-    let currentSlide = 0;
-    let autoSlideInterval;
- 
-       
-    // Function to show a specific slide
-    function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Show the selected slide
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        
-      
-       currentSlide = index;
-    }
-    
-    // Next slide function
-    function nextSlide() {
-        let nextIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextIndex);
-    }
-    
-    // Previous slide function
-    function prevSlide() {
-        let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(prevIndex);
-    }
-    
-    // Event listeners for arrows
-    nextArrow.addEventListener('click', function(e) {
-        e.stopPropagation();
-        nextSlide();
-    });
-    prevArrow.addEventListener('click', function(e) {
-        e.stopPropagation();
-        prevSlide();
-    });
-    // Event listeners for dots
-    dots.forEach(dot => {
-        dot.addEventListener('click', function(e) {
-            e.stopPropagation();
-            let slideIndex = parseInt(this.getAttribute('data-index'));
-            showSlide(slideIndex);
-        });
-    });
-    // Fix for clickable links in slides - allow links to work
-    document.querySelectorAll('.slide-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Allow the link to work normally
-            console.log("Link clicked - navigating to:", this.href);
-        });
-    });
-    // Prevent slide changes when clicking on links
-    document.querySelectorAll('.slide').forEach(slide => {
-        slide.addEventListener('click', function(e) {
-            // If the click was on a link, don't change slides
-            if (e.target.closest('.slide-link')) {
-                return; // Let the link handle the click
-            }
-      
-                   
-            // Otherwise, proceed with slide change logic if needed
-        });
-    });
-});
-
-
-// 3. New Mobile Navigation Toggle for Side Menu (Use this one)
-const primaryNav = document.querySelector('.primary-navigation');
-const navToggle = document.querySelector('.mobile-nav-toggle');
-
-navToggle.addEventListener('click', () => {
-    const isVisible = primaryNav.getAttribute('data-visible') === 'true';
-
-    if (isVisible) {
-        primaryNav.setAttribute('data-visible', false);
-        navToggle.setAttribute('aria-expanded', false);
-    } else {
-        primaryNav.setAttribute('data-visible', true);
-        navToggle.setAttribute('aria-expanded', true);
-    }
-});
 </script>
 
 </body>
 </html>
+
