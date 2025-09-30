@@ -854,42 +854,178 @@
 }
 
 
+/* === New Header, Search, and Menu Styles === */
+
+/* Hiding the original header and nav styles on mobile */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* This ensures the old nav is hidden */
+    }
+}
+header nav {
+    display: none; /* Hide the nav inside the original header structure */
+}
+
+/* Top Bar Styles */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a1a1a; /* Dark red color from example */
+    padding: 8px 20px;
+    color: white;
+}
+
+/* Search Form Styles */
+.search-form {
+    display: flex;
+    flex-grow: 1;
+    max-width: 600px;
+    border: 1px solid #8e4a4a;
+}
+.search-form input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+}
+.search-form input::placeholder {
+    color: #f0d0d0;
+    opacity: 1;
+}
+.search-form button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Hamburger Menu Toggle Button */
+.mobile-nav-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: 20px;
+    z-index: 1001; /* Ensure it's on top */
+}
+/* Change icon to 'X' when menu is open */
+.mobile-nav-toggle[aria-expanded="true"] i::before {
+    content: '\f00d'; /* Font Awesome 'times' (X) icon */
+    position: fixed; /* Keep the X in the same spot */
+    top: 15px;
+    right: 25px;
+}
+
+/* Main Logo Area below Top Bar */
+.logo-area {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center; /* Center the logo */
+}
+.logo-area .logo-image img {
+    [span_1](start_span)height: 80px;[span_1](end_span)
+}
+
+/* Side Navigation Menu Styles */
+.primary-navigation {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 80%;
+    max-width: 350px;
+    height: 100%;
+    background: #333;
+    z-index: 1000;
+    transition: right 350ms ease-out;
+    padding: 20px;
+    overflow-y: auto;
+}
+.primary-navigation[data-visible="true"] {
+    right: 0; /* Slide in */
+}
+.primary-navigation .nav-list {
+    [span_2](start_span)list-style: none;[span_2](end_span)
+    padding: 0;
+    margin: 0;
+    margin-top: 50px; /* Space from top */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.primary-navigation .nav-title {
+    color: #ccc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.primary-navigation .nav-list a {
+    [span_3](start_span)color: white;[span_3](end_span)
+    [span_4](start_span)text-decoration: none;[span_4](end_span)
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+    [span_5](start_span)border-radius: 4px;[span_5](end_span)
+    [span_6](start_span)transition: background 0.3s ease;[span_6](end_span)
+}
+.primary-navigation .nav-list a:hover {
+    background: #555;
+}
+.primary-navigation .dropdown-menu {
+    position: static; /* Override absolute positioning */
+    display: block;
+    background: none;
+    [span_7](start_span)box-shadow: none;[span_7](end_span)
+    padding: 0 0 0 20px; /* Indent sub-menu items */
+}
 
     </style>
 </head>
 <body>
 <!-- Header -->
    <header>
-    <div class="container">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-image">
-                    <img src="naac.jpg" alt="SNDT Women's University Logo">
-                </div>
+    <div class="top-bar">
+        <form class="search-form" action="#" method="get">
+            <input type="search" name="q" placeholder="Enter terms then hit Search...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
 
-            <nav>
-                <ul>
-                  <li class="dropdown">
-  <a href="#">About ▾</a>
-  <ul class="dropdown-menu">
-    <li><a href="leadership.html">Messages from Leadership</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-  </ul>
-</li>
-
-
-
-
-
-                    <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
-                    <li><a href="#event">Event Details</a></li>
-                    <li><a href="#registration">Register</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="logo-area container">
+        <div class="logo">
+            <div class="logo-image">
+                <img src="naac.jpg" alt="SNDT Women's University Logo">
+            </div>
+             </div>
     </div>
 </header>
+
+<nav id="primary-navigation" class="primary-navigation" data-visible="false">
+    <ul class="nav-list">
+        <li class="nav-title">Menu</li> <li class="dropdown">
+            <a href="#">About ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="leadership.html">Messages from Leadership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </li>
+        <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
+        <li><a href="#event">Event Details</a></li>
+        <li><a href="#registration">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
 
 <!-- Hero Section - Clean Slider (No Text/Button) -->
 <!-- Hero Section - Clean Slider (No Text/Button) -->
@@ -1257,7 +1393,39 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         </div>
     </footer>
 <script>
-// Manual image slider functionality
+// 1. Form submission handler (Keep this)
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    // Basic validation
+    const requiredFields = this.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+       
+     if (!field.value.trim()) {
+            field.style.borderColor = 'red';
+            isValid = false;
+        } else {
+            field.style.borderColor = '';
+        }
+    });
+    
+    if (!isValid) {
+        e.preventDefault();
+        alert('Please fill all required fields');
+   
+         return;
+    }
+    
+    // If validation passes, the form will submit to Google Forms
+    // Show success message after a short delay
+    setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('registrationForm').reset();
+    }, 1000);
+});
+
+
+// 2. Image slider functionality (Keep this)
 document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.hero-slider .slide');
     const dots = document.querySelectorAll('.slider-dot');
@@ -1265,7 +1433,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextArrow = document.querySelector('.arrow.next');
     let currentSlide = 0;
     let autoSlideInterval;
-    
+ 
+       
     // Function to show a specific slide
     function showSlide(index) {
         // Hide all slides
@@ -1276,7 +1445,8 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[index].classList.add('active');
         dots[index].classList.add('active');
         
-        currentSlide = index;
+      
+       currentSlide = index;
     }
     
     // Next slide function
@@ -1296,12 +1466,10 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         nextSlide();
     });
-    
     prevArrow.addEventListener('click', function(e) {
         e.stopPropagation();
         prevSlide();
     });
-    
     // Event listeners for dots
     dots.forEach(dot => {
         dot.addEventListener('click', function(e) {
@@ -1310,7 +1478,6 @@ document.addEventListener('DOMContentLoaded', function() {
             showSlide(slideIndex);
         });
     });
-
     // Fix for clickable links in slides - allow links to work
     document.querySelectorAll('.slide-link').forEach(link => {
         link.addEventListener('click', function(e) {
@@ -1318,7 +1485,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Link clicked - navigating to:", this.href);
         });
     });
-
     // Prevent slide changes when clicking on links
     document.querySelectorAll('.slide').forEach(slide => {
         slide.addEventListener('click', function(e) {
@@ -1326,13 +1492,30 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target.closest('.slide-link')) {
                 return; // Let the link handle the click
             }
-            
+      
+                   
             // Otherwise, proceed with slide change logic if needed
         });
     });
+});
 
-    
+
+// 3. New Mobile Navigation Toggle for Side Menu (Use this one)
+const primaryNav = document.querySelector('.primary-navigation');
+const navToggle = document.querySelector('.mobile-nav-toggle');
+
+navToggle.addEventListener('click', () => {
+    const isVisible = primaryNav.getAttribute('data-visible') === 'true';
+
+    if (isVisible) {
+        primaryNav.setAttribute('data-visible', false);
+        navToggle.setAttribute('aria-expanded', false);
+    } else {
+        primaryNav.setAttribute('data-visible', true);
+        navToggle.setAttribute('aria-expanded', true);
+    }
 });
 </script>
+
 </body>
 </html>
