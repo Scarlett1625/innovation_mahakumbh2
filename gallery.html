@@ -16,7 +16,8 @@
 
         /* --- NEW: Enhanced "Attractive" Theme --- */
         body {
-            background-color: #FFF8F5; /* Soft orange-tinted background */
+            background-color: #FFF8F5;
+            /* Soft orange-tinted background */
             color: #444;
             line-height: 1.6;
         }
@@ -80,13 +81,15 @@
           border-radius: 5px;
           z-index: 999;
         }
-        .dropdown:hover .dropdown-menu { display: flex; }
+        .dropdown:hover .dropdown-menu { display: flex;
+        }
         .dropdown-menu li a {
           padding: 10px 20px;
           color: white;
           transition: background 0.3s ease;
         }
-        .dropdown-menu li a:hover { background: rgba(255,255,255,0.2); }
+        .dropdown-menu li a:hover { background: rgba(255,255,255,0.2);
+        }
 
         /* NEW: Main gallery section styled as a card */
         #gallery {
@@ -131,8 +134,10 @@
 
         /* NEW: Animation for gallery items */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0;
+            transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0);
+            }
         }
 
         .gallery-item, .video-container {
@@ -141,11 +146,16 @@
         }
         
         /* Staggering animation delays */
-        .gallery-grid > *:nth-child(1) { animation-delay: 0.1s; }
-        .gallery-grid > *:nth-child(2) { animation-delay: 0.2s; }
-        .gallery-grid > *:nth-child(3) { animation-delay: 0.3s; }
-        .gallery-grid > *:nth-child(4) { animation-delay: 0.4s; }
-        .gallery-grid > *:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-grid > *:nth-child(1) { animation-delay: 0.1s;
+        }
+        .gallery-grid > *:nth-child(2) { animation-delay: 0.2s;
+        }
+        .gallery-grid > *:nth-child(3) { animation-delay: 0.3s;
+        }
+        .gallery-grid > *:nth-child(4) { animation-delay: 0.4s;
+        }
+        .gallery-grid > *:nth-child(5) { animation-delay: 0.5s;
+        }
 
 
         .gallery-item img {
@@ -214,14 +224,23 @@
             gap: 40px;
             margin-bottom: 40px;
         }
-        .footer-section h3 { font-size: 1.4rem; margin-bottom: 20px; }
-        .footer-section ul { list-style: none; padding: 0;}
-        .footer-section ul li { margin-bottom: 10px; }
-        .footer-section ul li a { color: #fff; text-decoration: none; }
-        .social-icons { display: flex; gap: 15px; margin-top: 20px; }
-        .social-icons a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; color: white; transition: all 0.3s ease; }
-        .social-icons a:hover { background: #FFEFEF; color: #FF6B6B; }
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+        .footer-section h3 { font-size: 1.4rem;
+        margin-bottom: 20px; }
+        .footer-section ul { list-style: none;
+        padding: 0;}
+        .footer-section ul li { margin-bottom: 10px;
+        }
+        .footer-section ul li a { color: #fff; text-decoration: none;
+        }
+        .social-icons { display: flex; gap: 15px; margin-top: 20px;
+        }
+        .social-icons a { display: flex; align-items: center; justify-content: center; width: 40px;
+        height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; color: white; transition: all 0.3s ease;
+        }
+        .social-icons a:hover { background: #FFEFEF; color: #FF6B6B;
+        }
+        .footer-bottom { text-align: center; padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2); }
     </style>
 </head>
 <body>
@@ -233,11 +252,11 @@
                 <ul>
                    <li class="dropdown">
                       <a href="#">About ▾</a>
-                      <ul class="dropdown-menu">
+                       <ul class="dropdown-menu">
                         <li><a href="leadership.html">Messages from Leadership</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                       </ul>
-                    </li>
+                   </li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
                     <li><a href="index.html#event">Event Details</a></li>
                     <li><a href="index.html#registration">Register</a></li>
@@ -310,6 +329,38 @@
                     </div>
                 </div>
             </div>
+
+            <div class="section-title" style="margin-top: 80px; margin-bottom: 50px;">
+                <h2><i class="fas fa-laptop-code"></i>Smart India Internal Hackathon</h2>
+                <p>Moments from our intense and innovative internal hackathon.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="sh1.JPG" alt="Hackathon Photo 1"></div>
+                <div class="gallery-item"><img src="sh2.jpg" alt="Hackathon Photo 2"></div>
+                <div class="gallery-item"><img src="sh3.jpg" alt="Hackathon Photo 3"></div>
+                <div class="gallery-item"><img src="sh4.jpg" alt="Hackathon Photo 4"></div>
+                <div class="gallery-item"><img src="sh5.jpeg" alt="Hackathon Photo 5"></div>
+                <div class="gallery-item"><img src="sh6.jpeg" alt="Hackathon Photo 6"></div>
+            </div>
+
+            <div class="section-title" style="margin-top: 80px; margin-bottom: 50px;">
+                <h2><i class="fas fa-trophy"></i>Achievement of Students</h2>
+                <p>Celebrating the outstanding accomplishments of our students.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="as1.jpg" alt="Achievement Photo 1"></div>
+                <div class="gallery-item"><img src="as2.jpg" alt="Achievement Photo 2"></div>
+                <div class="gallery-item"><img src="as3.jpg" alt="Achievement Photo 3"></div>
+                <div class="gallery-item"><img src="as4.jpg" alt="Achievement Photo 4"></div>
+                <div class="gallery-item"><img src="as5.jpg" alt="Achievement Photo 5"></div>
+                <div class="gallery-item"><img src="as6.jpg" alt="Achievement Photo 6"></div>
+                <div class="gallery-item"><img src="as7.jpg" alt="Achievement Photo 7"></div>
+                <div class="gallery-item"><img src="as8.jpg" alt="Achievement Photo 8"></div>
+                <div class="gallery-item"><img src="as9.jpg" alt="Achievement Photo 9"></div>
+            </div>
+
         </div>
     </section>
 </main>
