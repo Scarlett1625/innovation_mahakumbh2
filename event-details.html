@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovation Mahakumbha - SNDT Women's University</title>
+    <!-- Using Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
         
         * {
             margin: 0;
@@ -16,9 +17,10 @@
         }
         
         body {
-            background-color: #fff5f0;
-            color: #5a3d3d;
-            line-height: 1.6;
+            /* A softer, more engaging background */
+            background-color: #fdf7f2;
+            color: #4a3939;
+            line-height: 1.7;
         }
         
         .container {
@@ -27,160 +29,177 @@
             padding: 20px;
         }
         
+        /* --- Creative Header Redesign --- */
         header {
             text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(to bottom, #ff7b3b, #ff9d6c);
+            padding: 60px 20px;
+            /* A more vibrant, modern gradient */
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: white;
-            border-radius: 0 0 30px 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 30px rgba(255, 100, 80, 0.2);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .logo {
-            width: 120px;
-            margin-bottom: 15px;
-            filter: brightness(0) invert(1);
+
+        /* Adding a subtle pattern to the header for texture */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 800;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: relative;
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
+            font-weight: 300;
+            position: relative;
         }
         
         .date-venue {
-            background-color: rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.2);
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 30px;
-            margin-bottom: 20px;
+            margin-top: 10px;
             font-weight: 600;
-            color: #5a3d3d;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #ff3d3d;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-            background-color: #ff1a1a;
+            border: 1px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(5px);
+            position: relative;
         }
         
         .event-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin: 40px 0;
+            margin: 50px 0;
         }
         
+        /* --- Creative Card Redesign --- */
         .highlight-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 25px;
-            width: 300px;
+            padding: 35px;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-            border-top: 5px solid #ff7b3b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-top: 5px solid #ff7e5f;
         }
         
         .highlight-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(255, 126, 95, 0.25);
         }
         
         .highlight-card h3 {
-            color: #ff7b3b;
+            color: #c05d49;
             margin-bottom: 15px;
+            font-size: 1.4rem;
         }
         
         .icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #ff7b3b;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff7e5f;
+            line-height: 1;
         }
         
         .image-section {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 30px;
-            margin: 50px 0;
+            margin: 60px 0;
             flex-wrap: wrap;
         }
         
-        .image-placeholder {
-            width: 300px;
-            height: 200px;
-            background: linear-gradient(to bottom right, #ff9d6c, #ff7b3b);
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .event-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .event-image:hover {
+             transform: scale(1.03);
         }
         
         .info-section {
-            background: white;
+            background: #ffffff;
             border-radius: 20px;
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            border-left: 5px solid #ff7b3b;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            border-left: 5px solid #ff7e5f;
         }
         
         .info-section h2 {
-            color: #ff7b3b;
+            color: #c05d49;
             margin-bottom: 20px;
             text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .info-section > p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
         }
         
         .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-top: 30px;
         }
         
         .detail-item {
-            background: #fff0e6;
-            padding: 20px;
+            background: #fff9f5;
+            padding: 25px;
             border-radius: 15px;
-            border-left: 4px solid #ff7b3b;
+            border-left: 4px solid #ff9d6c;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
         
         .detail-item h4 {
-            color: #ff7b3b;
+            color: #c05d49;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: 1.2rem;
         }
         
         footer {
             text-align: center;
-            padding: 30px;
-            background: linear-gradient(to bottom, #ff7b3b, #ff9d6c);
+            padding: 40px 20px;
+            background: #4a3939;
             color: white;
-            border-radius: 30px 30px 0 0;
+            border-radius: 40px 40px 0 0;
             margin-top: 50px;
         }
         
@@ -188,20 +207,34 @@
             margin: 10px 0;
         }
         
+        footer a {
+            color: #feb47b;
+            text-decoration: none;
+        }
+
         .credits {
-            color: #fff0e6;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             margin-top: 20px;
+        }
+
+        /* Animation for sections on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
-            
-            .image-section {
-                flex-direction: column;
-                align-items: center;
+            .event-highlights, .details-grid {
+                 grid-template-columns: 1fr;
             }
         }
     </style>
@@ -209,84 +242,97 @@
 <body>
     <header>
         <div class="container">
-            <!-- Replace with your logo image -->
-            <div class="image-placeholder logo">Your Logo Here</div>
             <h1>EVENT DETAILS</h1>
             <p class="subtitle">Innovation Mahakumbha</p>
             <div class="date-venue">November 2025 | SNDT Women's University, Juhu Campus</div>
-            <br>
-            <a href="#register" class="btn">Register Now</a>
         </div>
     </header>
     
     <div class="container">
-        <section class="event-highlights">
+        <section class="event-highlights fade-in-section">
             <div class="highlight-card">
-                <div class="icon">💡</div>
+                <div class="icon"><i class="fas fa-lightbulb"></i></div>
                 <h3>Innovative Projects</h3>
-                <p>200+ student-led projects showcasing creativity and problem-solving</p>
+                <p>200+ student-led projects showcasing creativity and problem-solving.</p>
             </div>
             
             <div class="highlight-card">
-                <div class="icon">🤝</div>
+                <div class="icon"><i class="fas fa-handshake"></i></div>
                 <h3>Networking</h3>
-                <p>Connect with industry experts, mentors, and fellow innovators</p>
+                <p>Connect with industry experts, mentors, and fellow innovators.</p>
             </div>
             
             <div class="highlight-card">
-                <div class="icon">🏆</div>
+                <div class="icon"><i class="fas fa-trophy"></i></div>
                 <h3>Awards & Recognition</h3>
-                <p>Get your innovation recognized and supported for real-world impact</p>
+                <p>Get your innovation recognized and supported for real-world impact.</p>
             </div>
         </section>
         
-        <section class="image-section">
-            <!-- Replace with your first image -->
-            <div class="ed.png">Event Image 1</div>
-            
-            <!-- Replace with your second image -->
-            <div class="edm.png">Event Image 2</div>
+        <section class="image-section fade-in-section">
+            <!-- Replaced divs with actual image tags pointing to placeholders -->
+            <img src="https://placehold.co/450x300/ff9d6c/ffffff?text=Event+Image+1" alt="People collaborating at the event" class="event-image">
+            <img src="https://placehold.co/450x300/ff7e5f/ffffff?text=Event+Image+2" alt="An innovative project on display" class="event-image">
         </section>
         
-        <section class="info-section">
-            <h2>Event Details</h2>
+        <section class="info-section fade-in-section">
+            <h2>About The Event</h2>
             <p>Join us for a day of inspiration, innovation, and collaboration at the Innovation Mahakumbha! This special event brings together the brightest minds from SNDT Women's University to showcase groundbreaking projects and entrepreneurial ventures.</p>
             
             <div class="details-grid">
                 <div class="detail-item">
-                    <h4>📅 Date & Time</h4>
+                    <h4><i class="fas fa-calendar-alt"></i> Date & Time</h4>
                     <p>9 November 2025<br>10:00 AM - 5:00 PM</p>
                 </div>
                 
                 <div class="detail-item">
-                    <h4>📍 Location</h4>
+                    <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
                     <p>SNDT Women's University<br>Juhu Campus, Mumbai</p>
                 </div>
                 
                 <div class="detail-item">
-                    <h4>🎯 Focus Areas</h4>
+                    <h4><i class="fas fa-bullseye"></i> Focus Areas</h4>
                     <p>Healthcare, Education, Agriculture, Energy, Digital Inclusion, Women's Empowerment</p>
                 </div>
                 
                 <div class="detail-item">
-                    <h4>👥 Participants</h4>
+                    <h4><i class="fas fa-users"></i> Participants</h4>
                     <p>Students, Faculty, Industry Experts, Investors, and Innovation Enthusiasts</p>
                 </div>
             </div>
             
-            <div id="register" style="text-align: center; margin-top: 30px;">
-                <a href="https://scarlett1635.github.io/innovation_mahakumbha/" class="btn">Register Your Project</a>
-            </div>
+            <!-- The "Register Your Project" button has been removed from here -->
         </section>
     </div>
     
     <footer>
         <div class="container">
-            <p>Email: innovation2025@sndt.ac.in</p>
-            <p>Website: www.sndt.ac.in</p>
+            <p>Email: <a href="mailto:innovation2025@sndt.ac.in">innovation2025@sndt.ac.in</a></p>
+            <p>Website: <a href="http://www.sndt.ac.in" target="_blank" rel="noopener noreferrer">www.sndt.ac.in</a></p>
             <p class="credits">© 2025 SNDT Women's University | Juhu Campus</p>
         </div>
     </footer>
+
+    <script>
+        // Simple script for scroll animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
-
