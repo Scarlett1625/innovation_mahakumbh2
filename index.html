@@ -37,7 +37,6 @@
             z-index: 100;
         }
         
-        /* New wrapper for desktop header content */
         .header-desktop-content {
             display: flex;
             justify-content: space-between;
@@ -64,10 +63,8 @@
             object-fit: contain;
         }
 
-        /* --- DESKTOP NAVIGATION STYLES --- */
         .desktop-navigation {
             display: none;
-            /* Hidden on mobile by default */
         }
 
         /* Hero Section */
@@ -77,8 +74,7 @@
             overflow: hidden;
         }
 
-        /* Hero Slider Styles */
-      /* Hero Slider Styles - START REPLACEMENT HERE */
+        /* --- CORRECTED SLIDER STYLES START --- */
         .hero-slider {
             position: absolute;
             top: 0;
@@ -101,7 +97,6 @@
             pointer-events: none;
         }
         
-        /* This rule ensures the containers have a size */
         .desktop-slides, .mobile-slides {
             width: 100%;
             height: 100%;
@@ -117,7 +112,7 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
             pointer-events: none;
-            z-index: 4; /* Ensures slide is on top of the overlay */
+            z-index: 4; 
         }
 
         .slide.active {
@@ -125,12 +120,11 @@
             pointer-events: auto;
         }
 
-        /* THIS IS THE CRITICAL NEW FIX */
         .slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block; /* This forces the image to behave correctly inside its container */
+            display: block; 
         }
 
         .slide-link {
@@ -140,7 +134,6 @@
             text-decoration: none;
         }
 
-        /* Slider Navigation */
         .slider-nav {
             position: absolute;
             bottom: 20px;
@@ -195,10 +188,14 @@
             background: rgba(255, 255, 255, 0.7);
             color: #FF6B6B;
         }
+
+        /* THIS IS THE RULE IN THE CORRECT POSITION */
         .mobile-slides {
             display: none;
         }
-        /* END REPLACEMENT HERE */
+        /* --- CORRECTED SLIDER STYLES END --- */
+
+
         /* Section Styles */
         section {
             padding: 40px 0;
@@ -236,7 +233,6 @@
             margin: 0 auto;
         }
         
-        /* About Section */
         .about-content {
             display: flex;
             align-items: center;
@@ -250,6 +246,7 @@
         .about-text p {
             margin-bottom: 20px;
             font-size: 1.1rem;
+            text-align: justify;
         }
 
         .about-image {
@@ -392,42 +389,38 @@
         .social-icons a:hover { background: #FFEFEF; color: #FF6B6B; transform: translateY(-3px); }
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
-        /* Vision Section */
         .vision-section .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; color: #FF6B6B; }
         .vision-section .section-title p { font-size: 1.2rem; color: #555; margin-bottom: 40px; }
         .vision-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
 
-        /* MODIFIED: This is now the single large box */
         .vision-items { 
-            display: flex; 
+            display: flex;
             flex-wrap: wrap; 
-            justify-content: space-around; /* Better spacing for items inside */
+            justify-content: space-around;
             gap: 40px;
             width: 100%;
             background: white;
-            padding: 40px; /* Increased padding */
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 10px 25px rgba(255, 107, 107, 0.15);
         }
 
-        /* MODIFIED: This now styles the content inside the box */
         .vision-item {
             text-align: center;
             transition: transform 0.3s ease;
-            flex: 1; /* Allows items to grow and shrink */
-            min-width: 200px; /* Prevents items from becoming too narrow */
+            flex: 1;
+            min-width: 200px;
         }
         
         .vision-item:hover { 
-            transform: translateY(-10px); 
+            transform: translateY(-10px);
         }
 
         .vision-item .icon { 
-            font-size: 2.5rem; 
+            font-size: 2.5rem;
             margin-bottom: 15px; 
         }
 
-        /* === MOBILE-FIRST HEADER STYLES === */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -465,111 +458,47 @@
         .primary-navigation .nav-list a { color: white; text-decoration: none; font-size: 1.2rem; padding: 10px; display: block; border-radius: 4px; transition: background 0.3s ease; }
         .primary-navigation .nav-list a:hover { background: #555; }
         
-        /* Mobile Dropdown */
         .primary-navigation .dropdown-menu {
             position: static;
             display: block; background: none; box-shadow: none;
             padding: 0 0 0 20px;
         }
 
-        /* --- RESPONSIVE BREAKPOINTS --- */
-
-        /* DESKTOP STYLES */
+        /* --- MEDIA QUERIES --- */
         @media (min-width: 769px) {
-            .top-bar {
-                display: none;
-            }
-
-            .desktop-navigation {
-                display: block;
-            }
-
-            .desktop-navigation ul {
-                display: flex;
-                list-style: none;
-                gap: 35px;
-                margin: 0;
-                padding: 0;
-            }
-
-            .desktop-navigation ul li a {
-                color: #F57C00;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: color 0.3s ease;
-                padding: 5px 0;
-            }
-
-            .desktop-navigation ul li a:hover {
-                color: #E65100;
-            }
-            
-            .desktop-navigation .dropdown {
-                position: relative;
-            }
-
-            .desktop-navigation .dropdown-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: #ffffff;
-                padding: 10px 0;
-                display: none;
-                flex-direction: column;
-                min-width: 220px;
-                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-                border-radius: 5px;
-                z-index: 999;
-                border: 1px solid #eee;
-            }
-
-            .desktop-navigation .dropdown:hover .dropdown-menu {
-                display: flex;
-            }
-
-            .desktop-navigation .dropdown-menu li a {
-                padding: 10px 20px;
-                color: #333;
-            }
-
-            .desktop-navigation .dropdown-menu li a:hover {
-                color: #F57C00;
-                background-color: #f9f9f9;
-            }
-
+            .top-bar { display: none; }
+            .desktop-navigation { display: block; }
+            .desktop-navigation ul { display: flex; list-style: none; gap: 35px; margin: 0; padding: 0; }
+            .desktop-navigation ul li a { color: #F57C00; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s ease; padding: 5px 0; }
+            .desktop-navigation ul li a:hover { color: #E65100; }
+            .desktop-navigation .dropdown { position: relative; }
+            .desktop-navigation .dropdown-menu { position: absolute; top: 100%; left: 0; background: #ffffff; padding: 10px 0; display: none; flex-direction: column; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 5px; z-index: 999; border: 1px solid #eee; }
+            .desktop-navigation .dropdown:hover .dropdown-menu { display: flex; }
+            .desktop-navigation .dropdown-menu li a { padding: 10px 20px; color: #333; }
+            .desktop-navigation .dropdown-menu li a:hover { color: #F57C00; background-color: #f9f9f9; }
             .details-grid { grid-template-columns: repeat(4, 1fr); }
             .cards-container { grid-template-columns: repeat(3, 1fr); }
         }
 
-        /* TABLET STYLES */
         @media (min-width: 600px) and (max-width: 1023px) {
             .cards-container { grid-template-columns: repeat(2, 1fr); }
             .details-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* MOBILE STYLES */
         @media (max-width: 768px) {
             .section-title h2 { font-size: 2rem; }
             .about-content { flex-direction: column; }
             .hero { height: 50vh; }
             .logo-image img { height: 60px; }
-            /* NEW STYLES: Show mobile slides and hide desktop ones on smaller screens */
-.desktop-slides {
-    display: none;
-}
-
+            
+            /* Hides desktop slides and shows mobile slides */
+            .desktop-slides { display: none; }
+            .mobile-slides { display: block; }
         }
+
          @media (max-width: 599px) {
             .cards-container, .details-grid { grid-template-columns: 1fr; }
         }
-        .about-text p {
-    text-align: justify;
-}
-        /* NEW STYLES: Hide mobile slides by default */
-.mobile-slides {
-    display: none;
-}
     </style>
 </head>
 <body>
@@ -585,7 +514,6 @@
         </button>
     </div>
 
- 
     <div class="container">
         <div class="header-desktop-content">
             <div class="logo">
@@ -593,24 +521,20 @@
                     <img src="naac.jpg" alt="SNDT Women's University Logo">
                 </div>
             </div>
-    
             
             <nav class="desktop-navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
-                     
-   <a href="#about">About ▾</a>
+                        <a href="#about">About ▾</a>
                         <ul class="dropdown-menu">
                             <li><a href="leadership.html">Messages from Leadership</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
-          
-               </ul>
+                        </ul>
                     </li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
                     <li><a href="#event">Event Details</a></li>
-                    <li><a 
-href="#contact">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -623,8 +547,7 @@ href="#contact">Contact</a></li>
         <li><a href="index.html">Home</a></li>
         <li class="dropdown">
             <a href="#">About ▾</a>
-           
-     <ul class="dropdown-menu">
+            <ul class="dropdown-menu">
                 <li><a href="leadership.html">Messages from Leadership</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
             </ul>
@@ -636,47 +559,45 @@ href="#contact">Contact</a></li>
 </nav>
     
 <section class="hero">
+    <div class="hero-slider">
+        <div class="desktop-slides">
+            <div class="slide active">
+              <img src="pot2.png" alt="Innovation Mahakumbha Background">
+            </div>
+            <div class="slide">
+              <a href="event-details.html" class="slide-link" target="_blank">
+                <img src="pp.png" alt="Second Slide Image">
+              </a>
+            </div>
+            <div class="slide">
+              <a href="pre-detail.html" class="slide-link" target="_blank">
+                <img src="pa.png" alt="Third Slide Image">
+              </a>
+            </div>
+        </div>
+        
+        <div class="mobile-slides">
+            <div class="slide active">
+                <img src="imob.png" alt="Mobile Banner 1">
+            </div>
+            <div class="slide">
+                <img src="edmob.png" alt="Mobile Banner 2">
+            </div>
+            <div class="slide">
+                <img src="preactmob.png" alt="Mobile Banner 3">
+            </div>
+        </div>
 
-<div class="hero-slider">
-    
-    <div class="desktop-slides">
-        <div class="slide active">
-          <img src="pot2.png" alt="Innovation Mahakumbha Background">
+        <div class="slider-arrows">
+          <div class="arrow prev">❮</div>
+          <div class="arrow next">❯</div>
         </div>
-        <div class="slide">
-          <a href="event-details.html" class="slide-link" target="_blank">
-            <img src="pp.png" alt="Second Slide Image">
-          </a>
-        </div>
-        <div class="slide">
-          <a href="pre-detail.html" class="slide-link" target="_blank">
-            <img src="pa.png" alt="Third Slide Image">
-          </a>
+        <div class="slider-nav">
+          <div class="slider-dot active" data-index="0"></div>
+          <div class="slider-dot" data-index="1"></div>
+          <div class="slider-dot" data-index="2"></div>
         </div>
     </div>
-    
-    <div class="mobile-slides">
-        <div class="slide active">
-            <img src="https://via.placeholder.com/800x600/FF6B6B/FFFFFF?text=Mobile+Image+1" alt="Mobile Banner 1">
-        </div>
-        <div class="slide">
-            <img src="edmob.png" alt="Mobile Banner 2">
-        </div>
-        <div class="slide">
-            <img src="preactmob.png" alt="Mobile Banner 3">
-        </div>
-    </div>
-    <div class="slider-arrows">
-      <div 
-class="arrow prev">❮</div>
-      <div class="arrow next">❯</div>
-    </div>
-    <div class="slider-nav">
-      <div class="slider-dot active" data-index="0"></div>
-      <div class="slider-dot" data-index="1"></div>
-      <div class="slider-dot" data-index="2"></div>
-    </div>
-  </div>
 </section>
 
 <section id="about" class="about">
@@ -684,8 +605,7 @@ class="arrow prev">❮</div>
         <div class="section-title">
             <h2>About Innovation Mahakumbha</h2>
             <p>MEGA SHOWCASE OF INNOVATION & TALENT</p>
-    
-     </div>
+        </div>
         <div class="about-content">
             <div class="about-text">
                 <p><strong>SNDT Women’s University</strong> proudly presents - <strong>Innovation Mahakumbha</strong> – an exhibition of student-led innovative projects from across its departments, conducted and affiliated institutions. This initiative attempts to provide a unique platform to all its stakeholders for creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
@@ -701,29 +621,24 @@ class="arrow prev">❮</div>
 
 <section id="vision" class="vision-section">
     <div class="container">
-         <div 
-class="section-title">
+         <div class="section-title">
             <h2>Our Vision</h2>
             <p>Inspiring innovation, creativity, and collaboration</p>
         </div>
         <div class="vision-content">
-            
             <div class="vision-items">
                 <div class="vision-item">
-            
-                  <div class="icon">🧠</div>
+                    <div class="icon">🧠</div>
                     <p>Encourage new ideas</p>
                 </div>
                 <div class="vision-item">
                     <div class="icon">💡</div>
-              
-              <p>Unleash creativity by learning and sharing</p>
+                    <p>Unleash creativity by learning and sharing</p>
                 </div>
                 <div class="vision-item">
                     <div class="icon">🤝</div>
                     <p>Collaboration and networking</p>
-            
-             </div>
+                </div>
             </div>
         </div>
     </div>
@@ -736,7 +651,6 @@ class="section-title">
             <p>Join us for this celebration of innovation and entrepreneurship</p>
         </div>
         <div class="details-grid">
-  
            <div class="detail-box"><i class="fas fa-lightbulb"></i><h3>Innovation Stalls</h3><p>Students showcase projects in dedicated stalls</p></div>
             <div class="detail-box"><i class="fas fa-chalkboard-teacher"></i><h3>Expert Assessment</h3><p>Experts assess projects and provide valuable feedback</p></div>
             <div class="detail-box"><i class="fas fa-seedling"></i><h3>Startup & Funding</h3><p>Explore opportunities for startups and funding</p></div>
@@ -751,8 +665,7 @@ class="section-title">
 
 <section id="pre-activities" class="workshop-highlights">
     <div class="container">
-         <div 
-class="section-title">
+         <div class="section-title">
             <h2>Pre Activities</h2>
             <p>Engaging teachers and students through impactful initiatives</p>
         </div>
@@ -770,8 +683,7 @@ class="section-title">
             <h2>Flagship Showcases</h2>
             <p>Innovative applications solving real-world problems using AI</p>
         </div>
-         <div 
-class="cards-container">
+         <div class="cards-container">
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-heartbeat"></i></div><h3>Mental Health AI</h3><p>Solutions designed for emotional well-being and support.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-pills"></i></div><h3>Pharmacopeia AI</h3><p>Advancements in medicine and healthcare for a better tomorrow.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-spa"></i></div><h3>Spiritual AI</h3><p>AI-driven tools for personal growth, mindfulness, and balance.</p></div></div>
@@ -805,32 +717,27 @@ class="cards-container">
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
-   
                  <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
                  <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
                 <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
             </div>
-        
              <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                      <li><a href="#about">About</a></li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
-                 
-                   <li><a href="#event">Event Details</a></li>
+                    <li><a href="#event">Event Details</a></li>
                 </ul>
              </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
-                <p>Stay updated with the latest news</p>
-               
+                 <p>Stay updated with the latest news</p>
                  <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      
                    </div>
             </div>
          </div>
@@ -856,7 +763,7 @@ class="cards-container">
             }
         });
 
-        // --- NEW, SIMPLIFIED & CORRECTED HERO SLIDER ---
+        // --- CORRECTED HERO SLIDER SCRIPT ---
         const dots = document.querySelectorAll('.slider-dot');
         const prevArrow = document.querySelector('.arrow.prev');
         const nextArrow = document.querySelector('.arrow.next');
@@ -867,7 +774,6 @@ class="cards-container">
         let slideInterval;
 
         function getVisibleSlides() {
-            // This function checks the screen size and returns the correct set of slides
             if (window.innerWidth <= 768) {
                 return document.querySelectorAll('.mobile-slides .slide');
             } else {
@@ -879,14 +785,11 @@ class="cards-container">
             visibleSlides = getVisibleSlides();
             if (visibleSlides.length === 0) return;
 
-            // Make sure the new index is within the valid range (0, 1, 2)
             currentSlideIndex = (newIndex + visibleSlides.length) % visibleSlides.length;
 
-            // First, hide everything
             allSlides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
 
-            // Then, show the correct slide and dot
             visibleSlides[currentSlideIndex].classList.add('active');
             dots[currentSlideIndex].classList.add('active');
         }
@@ -894,11 +797,10 @@ class="cards-container">
         function resetInterval() {
             clearInterval(slideInterval);
             slideInterval = setInterval(() => {
-                updateSlider(currentSlideIndex + 1); // Go to the next slide
+                updateSlider(currentSlideIndex + 1);
             }, 5000);
         }
 
-        // --- Setup Event Listeners (Done only once) ---
         nextArrow.addEventListener('click', () => {
             updateSlider(currentSlideIndex + 1);
             resetInterval();
@@ -916,15 +818,12 @@ class="cards-container">
             });
         });
         
-        // Update the slider when the window is resized
         window.addEventListener('resize', () => updateSlider(currentSlideIndex));
 
-        // --- Initial Start ---
-        updateSlider(0); // Show the first slide
-        resetInterval(); // Start the automatic sliding
+        updateSlider(0);
+        resetInterval();
     });
 </script>
 
 </body>
 </html>
-}
