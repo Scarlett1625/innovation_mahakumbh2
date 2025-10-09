@@ -540,12 +540,23 @@
             .about-content { flex-direction: column; }
             .hero { height: 50vh; }
             .logo-image img { height: 60px; }
+            /* NEW STYLES: Show mobile slides and hide desktop ones on smaller screens */
+.desktop-slides {
+    display: none;
+}
+.mobile-slides {
+    display: block;
+}
         }
          @media (max-width: 599px) {
             .cards-container, .details-grid { grid-template-columns: 1fr; }
         }
         .about-text p {
     text-align: justify;
+}
+        /* NEW STYLES: Hide mobile slides by default */
+.mobile-slides {
+    display: none;
 }
     </style>
 </head>
@@ -616,20 +627,33 @@ href="#contact">Contact</a></li>
 
 <div class="hero-slider">
     
-<div class="slide active">
-      <img src="pot2.png" alt="Innovation Mahakumbha Background">
+    <div class="desktop-slides">
+        <div class="slide active">
+          <img src="pot2.png" alt="Innovation Mahakumbha Background">
+        </div>
+        <div class="slide">
+          <a href="event-details.html" class="slide-link" target="_blank">
+            <img src="pp.png" alt="Second Slide Image">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="pre-detail.html" class="slide-link" target="_blank">
+            <img src="pa.png" alt="Third Slide Image">
+          </a>
+        </div>
     </div>
-    <div class="slide">
-      <a href="event-details.html" class="slide-link" target="_blank">
-        <img src="pp.png" alt="Second Slide Image">
-      </a>
+    
+    <div class="mobile-slides">
+        <div class="slide active">
+            <img src="mobile-banner-1.jpg" alt="Mobile Banner 1">
+        </div>
+        <div class="slide">
+            <img src="mobile-banner-2.jpg" alt="Mobile Banner 2">
+        </div>
+        <div class="slide">
+            <img src="mobile-banner-3.jpg" alt="Mobile Banner 3">
+        </div>
     </div>
-    <div class="slide">
-      <a href="pre-detail.html" class="slide-link" target="_blank">
-        <img src="pa.png" alt="Third Slide Image">
-      </a>
-    </div>
-
     <div class="slider-arrows">
       <div 
 class="arrow prev">❮</div>
@@ -818,48 +842,86 @@ class="cards-container">
                 primaryNav.setAttribute('data-visible', true);
                 navToggle.setAttribute('aria-expanded', true);
             }
-     
-           });
+        });
 
-        // --- Hero Slider ---
-        const slides = document.querySelectorAll('.hero-slider .slide');
-        const dots = document.querySelectorAll('.slider-dot');
-        const prevArrow = document.querySelector('.arrow.prev');
-        const nextArrow = document.querySelector('.arrow.next');
-        let currentSlide = 0;
-        let slideInterval = setInterval(nextSlide, 5000);
-        // Auto-slide every 5 seconds
+        // --- UPDATED Hero Slider ---
+        let slideInterval;
+        let resizeTimer;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                dots[i].classList.remove('active');
-            });
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentSlide = index;
-        }
-
-        function nextSlide() {
-            showSlide((currentSlide + 1) % slides.length);
-        }
-
-        function prevSlide() {
-            showSlide((currentSlide - 1 + slides.length) % slides.length);
-        }
-
-        function resetInterval() {
+        function initSlider() {
+            // Clear any existing intervals and listeners to prevent duplicates
             clearInterval(slideInterval);
+            
+            let slides;
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevArrow = document.querySelector('.arrow.prev');
+            const nextArrow = document.querySelector('.arrow.next');
+
+            // Determine which set of slides to use based on screen width
+            if (window.innerWidth <= 768) {
+                slides = document.querySelectorAll('.mobile-slides .slide');
+            } else {
+                slides = document.querySelectorAll('.desktop-slides .slide');
+            }
+            
+            // If no slides are found (e.g., during a resize transition), do nothing.
+            if (slides.length === 0) return;
+
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (dots[i]) dots[i].classList.remove('active');
+                });
+                slides[index].classList.add('active');
+                if (dots[index]) dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                showSlide((currentSlide + 1) % slides.length);
+            }
+
+            function prevSlide() {
+                showSlide((currentSlide - 1 + slides.length) % slides.length);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            // Re-initialize event listeners with a clean slate
+            const newNextArrow = nextArrow.cloneNode(true);
+            nextArrow.parentNode.replaceChild(newNextArrow, nextArrow);
+            newNextArrow.addEventListener('click', () => { nextSlide(); resetInterval(); });
+
+            const newPrevArrow = prevArrow.cloneNode(true);
+            prevArrow.parentNode.replaceChild(newPrevArrow, prevArrow);
+            newPrevArrow.addEventListener('click', () => { prevSlide(); resetInterval(); });
+
+            dots.forEach(dot => {
+                const newDot = dot.cloneNode(true);
+                dot.parentNode.replaceChild(newDot, dot);
+                newDot.addEventListener('click', () => {
+                    showSlide(parseInt(newDot.dataset.index));
+                    resetInterval();
+                });
+            });
+
+            // Start the auto-slide and ensure the first slide is visible
+            showSlide(0);
             slideInterval = setInterval(nextSlide, 5000);
         }
 
-        nextArrow.addEventListener('click', () => { nextSlide(); resetInterval(); });
-        prevArrow.addEventListener('click', () => { prevSlide(); resetInterval(); });
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                showSlide(parseInt(dot.dataset.index));
-                resetInterval();
-            });
+        // Initial setup on page load
+        initSlider();
+
+        // Re-initialize slider on window resize (with debounce to prevent performance issues)
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(initSlider, 250);
         });
     });
 </script>
