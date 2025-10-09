@@ -128,34 +128,7 @@
             z-index: 3;
             pointer-events: none;
         }
-/* --- RESPONSIVE SLIDER BACKGROUNDS --- */
 
-/* 1. Set common background properties for the slides */
-.slide {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/* 2. Define the DESKTOP background images using your new classes */
-/* These URLs should match the ones in your <img> tags */
-.slide-1 { background-image: url('pot2.png'); }
-.slide-2 { background-image: url('pp.png'); }
-.slide-3 { background-image: url('pa.png'); }
-
-/* 3. Use a media query to HIDE the <img> tags and set MOBILE images */
-@media (max-width: 768px) {
-    /* This hides the original <img> elements on mobile */
-    .slide img {
-        display: none;
-    }
-
-    /* Define your new, MOBILE-specific banner images here */
-    /* You will need to create these images (e.g., pot2-mobile.png) */
-    .slide-1 { background-image: url('pot2-mobile.png'); }
-    .slide-2 { background-image: url('pp-mobile.png'); }
-    .slide-3 { background-image: url('preactmob.png'); }
-}
         /* Slider Navigation */
         .slider-nav {
             position: absolute;
@@ -638,24 +611,25 @@ href="#contact">Contact</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
+    
+<section class="hero">
 
 <div class="hero-slider">
-    <div class="slide active slide-1">
+    
+<div class="slide active">
       <img src="pot2.png" alt="Innovation Mahakumbha Background">
     </div>
-
-    <div class="slide slide-2">
+    <div class="slide">
       <a href="event-details.html" class="slide-link" target="_blank">
         <img src="pp.png" alt="Second Slide Image">
       </a>
     </div>
-
-    <div class="slide slide-3">
+    <div class="slide">
       <a href="pre-detail.html" class="slide-link" target="_blank">
         <img src="pa.png" alt="Third Slide Image">
       </a>
     </div>
-</div>
+
     <div class="slider-arrows">
       <div 
 class="arrow prev">❮</div>
