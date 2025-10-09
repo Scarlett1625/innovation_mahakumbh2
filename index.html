@@ -78,6 +78,7 @@
         }
 
         /* Hero Slider Styles */
+      /* Hero Slider Styles - START REPLACEMENT HERE */
         .hero-slider {
             position: absolute;
             top: 0;
@@ -86,40 +87,6 @@
             height: 100%;
             z-index: 1;
             overflow: hidden;
-        }
-.desktop-slides, .mobile-slides {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            pointer-events: none;
-             z-index: 4;
-        }
-
-        .slide.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .slide-link {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
         }
 
         .hero-slider::after {
@@ -132,6 +99,45 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: 3;
             pointer-events: none;
+        }
+        
+        /* This rule ensures the containers have a size */
+        .desktop-slides, .mobile-slides {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+            z-index: 4; /* Ensures slide is on top of the overlay */
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* THIS IS THE CRITICAL NEW FIX */
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block; /* This forces the image to behave correctly inside its container */
+        }
+
+        .slide-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
         }
 
         /* Slider Navigation */
@@ -189,7 +195,7 @@
             background: rgba(255, 255, 255, 0.7);
             color: #FF6B6B;
         }
-
+        /* END REPLACEMENT HERE */
         /* Section Styles */
         section {
             padding: 40px 0;
