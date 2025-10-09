@@ -849,85 +849,72 @@ class="cards-container">
             }
         });
 
-        // --- UPDATED Hero Slider ---
+        // --- NEW, SIMPLIFIED & CORRECTED HERO SLIDER ---
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevArrow = document.querySelector('.arrow.prev');
+        const nextArrow = document.querySelector('.arrow.next');
+        const allSlides = document.querySelectorAll('.desktop-slides .slide, .mobile-slides .slide');
+
+        let currentSlideIndex = 0;
+        let visibleSlides = [];
         let slideInterval;
-        let resizeTimer;
 
-        function initSlider() {
-            // Clear any existing intervals and listeners to prevent duplicates
-            clearInterval(slideInterval);
-            
-            let slides;
-            const dots = document.querySelectorAll('.slider-dot');
-            const prevArrow = document.querySelector('.arrow.prev');
-            const nextArrow = document.querySelector('.arrow.next');
-
-            // Determine which set of slides to use based on screen width
+        function getVisibleSlides() {
+            // This function checks the screen size and returns the correct set of slides
             if (window.innerWidth <= 768) {
-                slides = document.querySelectorAll('.mobile-slides .slide');
+                return document.querySelectorAll('.mobile-slides .slide');
             } else {
-                slides = document.querySelectorAll('.desktop-slides .slide');
+                return document.querySelectorAll('.desktop-slides .slide');
             }
-            
-            // If no slides are found (e.g., during a resize transition), do nothing.
-            if (slides.length === 0) return;
-
-            let currentSlide = 0;
-
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    if (dots[i]) dots[i].classList.remove('active');
-                });
-                slides[index].classList.add('active');
-                if (dots[index]) dots[index].classList.add('active');
-                currentSlide = index;
-            }
-
-            function nextSlide() {
-                showSlide((currentSlide + 1) % slides.length);
-            }
-
-            function prevSlide() {
-                showSlide((currentSlide - 1 + slides.length) % slides.length);
-            }
-
-            function resetInterval() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-            
-            // Re-initialize event listeners with a clean slate
-            const newNextArrow = nextArrow.cloneNode(true);
-            nextArrow.parentNode.replaceChild(newNextArrow, nextArrow);
-            newNextArrow.addEventListener('click', () => { nextSlide(); resetInterval(); });
-
-            const newPrevArrow = prevArrow.cloneNode(true);
-            prevArrow.parentNode.replaceChild(newPrevArrow, prevArrow);
-            newPrevArrow.addEventListener('click', () => { prevSlide(); resetInterval(); });
-
-            dots.forEach(dot => {
-                const newDot = dot.cloneNode(true);
-                dot.parentNode.replaceChild(newDot, dot);
-                newDot.addEventListener('click', () => {
-                    showSlide(parseInt(newDot.dataset.index));
-                    resetInterval();
-                });
-            });
-
-            // Start the auto-slide and ensure the first slide is visible
-            showSlide(0);
-            slideInterval = setInterval(nextSlide, 5000);
         }
 
-        // Initial setup on page load
-        initSlider();
+        function updateSlider(newIndex) {
+            visibleSlides = getVisibleSlides();
+            if (visibleSlides.length === 0) return;
 
-        // Re-initialize slider on window resize (with debounce to prevent performance issues)
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(initSlider, 250);
+            // Make sure the new index is within the valid range (0, 1, 2)
+            currentSlideIndex = (newIndex + visibleSlides.length) % visibleSlides.length;
+
+            // First, hide everything
+            allSlides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Then, show the correct slide and dot
+            visibleSlides[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
+        }
+        
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                updateSlider(currentSlideIndex + 1); // Go to the next slide
+            }, 5000);
+        }
+
+        // --- Setup Event Listeners (Done only once) ---
+        nextArrow.addEventListener('click', () => {
+            updateSlider(currentSlideIndex + 1);
+            resetInterval();
         });
+
+        prevArrow.addEventListener('click', () => {
+            updateSlider(currentSlideIndex - 1);
+            resetInterval();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateSlider(index);
+                resetInterval();
+            });
+        });
+        
+        // Update the slider when the window is resized
+        window.addEventListener('resize', () => updateSlider(currentSlideIndex));
+
+        // --- Initial Start ---
+        updateSlider(0); // Show the first slide
+        resetInterval(); // Start the automatic sliding
     });
 </script>
 
