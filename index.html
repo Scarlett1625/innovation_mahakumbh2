@@ -112,7 +112,7 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
             pointer-events: none;
-            z-index: 4; 
+            z-index: 4;
         }
 
         .slide.active {
@@ -373,25 +373,36 @@
             background: #FFEFEF;
         }
         
-        .footer-section p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 10px; }
-        .footer-section ul li a { color: #fff; text-decoration: none; transition: color 0.3s ease; }
-        .footer-section ul li a:hover { color: #FFEFEF; }
+        .footer-section p { margin-bottom: 15px; 
+            display: flex; align-items: center; gap: 10px; }
+        .footer-section ul { list-style: none;
+        }
+        .footer-section ul li { margin-bottom: 10px;
+        }
+        .footer-section ul li a { color: #fff; text-decoration: none;
+        transition: color 0.3s ease; }
+        .footer-section ul li a:hover { color: #FFEFEF;
+        }
         
-        .social-icons { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icons { display: flex;
+        gap: 15px; margin-top: 20px; }
         .social-icons a {
             display: flex;
             align-items: center; justify-content: center; width: 40px; height: 40px;
             background: rgba(255, 255, 255, 0.2); border-radius: 50%; color: white;
             transition: all 0.3s ease;
         }
-        .social-icons a:hover { background: #FFEFEF; color: #FF6B6B; transform: translateY(-3px); }
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+        .social-icons a:hover { background: #FFEFEF; color: #FF6B6B;
+        transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
-        .vision-section .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; color: #FF6B6B; }
-        .vision-section .section-title p { font-size: 1.2rem; color: #555; margin-bottom: 40px; }
-        .vision-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+        .vision-section .section-title h2 { font-size: 2.5rem;
+        margin-bottom: 10px; color: #FF6B6B; }
+        .vision-section .section-title p { font-size: 1.2rem; color: #555;
+        margin-bottom: 40px; }
+        .vision-content { display: flex; flex-direction: column; align-items: center; gap: 40px;
+        }
 
         .vision-items { 
             display: flex;
@@ -430,10 +441,14 @@
             color: white;
         }
 
-        .search-form { display: flex; flex-grow: 1; max-width: 600px; border: 1px solid #8e4a4a; }
-        .search-form input { width: 100%; background: transparent; border: none; color: white; padding: 10px; font-size: 1rem; }
-        .search-form input::placeholder { color: #f0d0d0; opacity: 1; }
-        .search-form button { background: transparent; border: none; color: white; padding: 0 15px; cursor: pointer; font-size: 1.1rem; }
+        .search-form { display: flex; flex-grow: 1; max-width: 600px; border: 1px solid #8e4a4a;
+        }
+        .search-form input { width: 100%; background: transparent; border: none; color: white;
+        padding: 10px; font-size: 1rem; }
+        .search-form input::placeholder { color: #f0d0d0; opacity: 1;
+        }
+        .search-form button { background: transparent; border: none; color: white; padding: 0 15px;
+        cursor: pointer; font-size: 1.1rem; }
 
         .mobile-nav-toggle {
             background: none;
@@ -452,11 +467,17 @@
             padding: 20px;
             overflow-y: auto;
         }
-        .primary-navigation[data-visible="true"] { right: 0; }
-        .primary-navigation .nav-list { list-style: none; padding: 0; margin: 50px 0 0 0; display: flex; flex-direction: column; gap: 15px; }
-        .primary-navigation .nav-title { color: #ccc; font-size: 1.5rem; font-weight: bold; border-bottom: 1px solid #555; padding-bottom: 10px; margin-bottom: 10px; }
-        .primary-navigation .nav-list a { color: white; text-decoration: none; font-size: 1.2rem; padding: 10px; display: block; border-radius: 4px; transition: background 0.3s ease; }
-        .primary-navigation .nav-list a:hover { background: #555; }
+        .primary-navigation[data-visible="true"] { right: 0;
+        }
+        .primary-navigation .nav-list { list-style: none; padding: 0; margin: 50px 0 0 0;
+        display: flex; flex-direction: column; gap: 15px; }
+        .primary-navigation .nav-title { color: #ccc;
+        font-size: 1.5rem; font-weight: bold; border-bottom: 1px solid #555; padding-bottom: 10px; margin-bottom: 10px;
+        }
+        .primary-navigation .nav-list a { color: white; text-decoration: none; font-size: 1.2rem; padding: 10px;
+        display: block; border-radius: 4px; transition: background 0.3s ease; }
+        .primary-navigation .nav-list a:hover { background: #555;
+        }
         
         .primary-navigation .dropdown-menu {
             position: static;
@@ -464,40 +485,96 @@
             padding: 0 0 0 20px;
         }
 
+        /* ========== BROCHURE SECTION STYLES ========== */
+        .brochure-section {
+            background-color: #fdfdfd; /* A very light, neutral background */
+        }
+        .brochure-content {
+            text-align: center;
+        }
+        .brochure-embed {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .brochure-download .btn {
+            display: inline-block;
+            background: #FF6B6B; /* Re-using your theme color */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 1.1rem;
+        }
+        .brochure-download .btn:hover {
+            background: #e65100; /* Re-using your theme's hover color */
+            transform: translateY(-3px);
+        }
+        .brochure-download .btn i {
+            margin-right: 10px;
+        }
+
         /* --- MEDIA QUERIES --- */
         @media (min-width: 769px) {
-            .top-bar { display: none; }
-            .desktop-navigation { display: block; }
-            .desktop-navigation ul { display: flex; list-style: none; gap: 35px; margin: 0; padding: 0; }
-            .desktop-navigation ul li a { color: #F57C00; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s ease; padding: 5px 0; }
-            .desktop-navigation ul li a:hover { color: #E65100; }
-            .desktop-navigation .dropdown { position: relative; }
-            .desktop-navigation .dropdown-menu { position: absolute; top: 100%; left: 0; background: #ffffff; padding: 10px 0; display: none; flex-direction: column; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 5px; z-index: 999; border: 1px solid #eee; }
-            .desktop-navigation .dropdown:hover .dropdown-menu { display: flex; }
-            .desktop-navigation .dropdown-menu li a { padding: 10px 20px; color: #333; }
-            .desktop-navigation .dropdown-menu li a:hover { color: #F57C00; background-color: #f9f9f9; }
-            .details-grid { grid-template-columns: repeat(4, 1fr); }
-            .cards-container { grid-template-columns: repeat(3, 1fr); }
+            .top-bar { display: none;
+            }
+            .desktop-navigation { display: block;
+            }
+            .desktop-navigation ul { display: flex; list-style: none;
+            gap: 35px; margin: 0; padding: 0; }
+            .desktop-navigation ul li a { color: #F57C00;
+            text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s ease; padding: 5px 0;
+            }
+            .desktop-navigation ul li a:hover { color: #E65100;
+            }
+            .desktop-navigation .dropdown { position: relative;
+            }
+            .desktop-navigation .dropdown-menu { position: absolute; top: 100%;
+            left: 0; background: #ffffff; padding: 10px 0; display: none; flex-direction: column; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 5px;
+            z-index: 999; border: 1px solid #eee; }
+            .desktop-navigation .dropdown:hover .dropdown-menu { display: flex;
+            }
+            .desktop-navigation .dropdown-menu li a { padding: 10px 20px;
+            color: #333; }
+            .desktop-navigation .dropdown-menu li a:hover { color: #F57C00;
+            background-color: #f9f9f9; }
+            .details-grid { grid-template-columns: repeat(4, 1fr);
+            }
+            .cards-container { grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         @media (min-width: 600px) and (max-width: 1023px) {
-            .cards-container { grid-template-columns: repeat(2, 1fr); }
-            .details-grid { grid-template-columns: repeat(2, 1fr); }
+            .cards-container { grid-template-columns: repeat(2, 1fr);
+            }
+            .details-grid { grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
-            .section-title h2 { font-size: 2rem; }
-            .about-content { flex-direction: column; }
-            .hero { height: 50vh; }
-            .logo-image img { height: 60px; }
+            .section-title h2 { font-size: 2rem;
+            }
+            .about-content { flex-direction: column;
+            }
+            .hero { height: 50vh;
+            }
+            .logo-image img { height: 60px;
+            }
             
             /* Hides desktop slides and shows mobile slides */
-            .desktop-slides { display: none; }
-            .mobile-slides { display: block; }
+            .desktop-slides { display: none;
+            }
+            .mobile-slides { display: block;
+            }
         }
 
          @media (max-width: 599px) {
-            .cards-container, .details-grid { grid-template-columns: 1fr; }
+            .cards-container, .details-grid { grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -511,6 +588,7 @@
         </form>
         <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
             <i class="fas fa-bars"></i>
+         
         </button>
     </div>
 
@@ -520,20 +598,25 @@
                 <div class="logo-image">
                     <img src="naac.jpg" alt="SNDT Women's University Logo">
                 </div>
+            
             </div>
             
             <nav class="desktop-navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
+                     
                         <a href="#about">About ▾</a>
                         <ul class="dropdown-menu">
                             <li><a href="leadership.html">Messages from Leadership</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="#brochure">Event Brochure</a></li>
+                         
                         </ul>
                     </li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
                     <li><a href="event-details.html">Event Details</a></li>
+                     
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -547,14 +630,17 @@
         <li><a href="index.html">Home</a></li>
         <li class="dropdown">
             <a href="#">About ▾</a>
+       
             <ul class="dropdown-menu">
                 <li><a href="leadership.html">Messages from Leadership</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#brochure">Event Brochure</a></li>
             </ul>
         </li>
         <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
         <li><a href="event-details.html">Event Details</a></li>
         <li><a href="#contact">Contact</a></li>
+        
     </ul>
 </nav>
     
@@ -566,13 +652,15 @@
             </div>
             <div class="slide">
               <a href="event-details.html" class="slide-link" target="_blank">
-                <img src="pp.png" alt="Second Slide Image">
+           
+                 <img src="pp.png" alt="Second Slide Image">
               </a>
             </div>
             <div class="slide">
               <a href="pre-detail.html" class="slide-link" target="_blank">
                 <img src="pa.png" alt="Third Slide Image">
-              </a>
+               
+            </a>
             </div>
         </div>
         
@@ -581,7 +669,8 @@
                 <img src="imob2.jpg" alt="Mobile Banner 1">
             </div>
             <div class="slide">
-                <img src="edmob2.jpg" alt="Mobile Banner 2">
+ 
+                 <img src="edmob2.jpg" alt="Mobile Banner 2">
             </div>
             <div class="slide">
                 <img src="preactmob2.jpg" alt="Mobile Banner 3">
@@ -589,7 +678,8 @@
         </div>
 
         <div class="slider-arrows">
-          <div class="arrow prev">❮</div>
+           
+           <div class="arrow prev">❮</div>
           <div class="arrow next">❯</div>
         </div>
         <div class="slider-nav">
@@ -603,14 +693,18 @@
 <section id="about" class="about">
     <div class="container">
         <div class="section-title">
+ 
             <h2>About Innovation Mahakumbha</h2>
             <p>MEGA SHOWCASE OF INNOVATION & TALENT</p>
         </div>
         <div class="about-content">
             <div class="about-text">
-                <p><strong>SNDT Women’s University</strong> proudly presents - <strong>Innovation Mahakumbha</strong> – an exhibition of student-led innovative projects from across its departments, conducted and affiliated institutions. This initiative attempts to provide a unique platform to all its stakeholders for creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
-                <p>Over 200 faculty from the University and its affiliated colleges received specialized training in innovation, entrepreneurship, and Agentic AI through the Wadhwani Foundation. This equipped them with advanced skills to drive ideation, problem-solving, and product development.</p>
-                <p>Guided by these trained faculty, students have built technology-driven prototypes and sustainable solutions. Their entrepreneurial ventures address real-world challenges in healthcare, education, agriculture, energy, digital inclusion, and women's empowerment.</p>
+                <p><strong>SNDT Women’s University</strong> proudly presents - <strong>Innovation Mahakumbha</strong> – an exhibition of student-led innovative projects from across its departments, conducted and affiliated institutions.
+This initiative attempts to provide a unique platform to all its stakeholders for creativity, entrepreneurship, grassroots innovation, and academic-industry collaboration in alignment with the vision of a self-reliant India and the objectives of the PM-USHA Scheme.</p>
+                <p>Over 200 faculty from the University and its affiliated colleges received specialized training in innovation, entrepreneurship, and Agentic AI through the Wadhwani Foundation.
+This equipped them with advanced skills to drive ideation, problem-solving, and product development.</p>
+                <p>Guided by these trained faculty, students have built technology-driven prototypes and sustainable solutions.
+Their entrepreneurial ventures address real-world challenges in healthcare, education, agriculture, energy, digital inclusion, and women's empowerment.</p>
             </div>
             <div class="about-image">
                 <img src="maha.png" alt="Innovation Exhibition">
@@ -619,9 +713,32 @@
     </div>
 </section>
 
+<section id="brochure" class="brochure-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Event Brochure</h2>
+            <p>View the official brochure for Innovation Mahakumbha 2025</p>
+        </div>
+        <div class="brochure-content">
+            <div class="brochure-embed">
+                <iframe src="brochure.pdf" width="100%" height="600px">
+                    <p>Your browser does not support viewing PDFs. 
+                       <a href="brochure.pdf">Download the PDF</a> to view it.
+                    </p>
+                </iframe>
+            </div>
+            <div class="brochure-download">
+                <a href="brochure.pdf" class="btn btn-primary" download>
+                    <i class="fas fa-download"></i> Download Brochure (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="vision" class="vision-section">
     <div class="container">
-         <div class="section-title">
+         <div 
+ class="section-title">
             <h2>Our Vision</h2>
             <p>Inspiring innovation, creativity, and collaboration</p>
         </div>
@@ -629,17 +746,20 @@
             <div class="vision-items">
                 <div class="vision-item">
                     <div class="icon">🧠</div>
-                    <p>Encourage new ideas</p>
+   
+                     <p>Encourage new ideas</p>
                 </div>
                 <div class="vision-item">
                     <div class="icon">💡</div>
                     <p>Unleash creativity by learning and sharing</p>
-                </div>
+  
+               </div>
                 <div class="vision-item">
                     <div class="icon">🤝</div>
                     <p>Collaboration and networking</p>
                 </div>
-            </div>
+              
+           </div>
         </div>
     </div>
 </section>
@@ -651,12 +771,14 @@
             <p>Join us for this celebration of innovation and entrepreneurship</p>
         </div>
         <div class="details-grid">
-           <div class="detail-box"><i class="fas fa-lightbulb"></i><h3>Innovation Stalls</h3><p>Students showcase projects in dedicated stalls</p></div>
+           <div class="detail-box"><i class="fas fa-lightbulb"></i><h3>Innovation Stalls</h3><p>Students 
+showcase projects in dedicated stalls</p></div>
             <div class="detail-box"><i class="fas fa-chalkboard-teacher"></i><h3>Expert Assessment</h3><p>Experts assess projects and provide valuable feedback</p></div>
             <div class="detail-box"><i class="fas fa-seedling"></i><h3>Startup & Funding</h3><p>Explore opportunities for startups and funding</p></div>
             <div class="detail-box"><i class="fas fa-microphone"></i><h3>Talks & Workshops</h3><p>Entrepreneurs and investors conduct interactive sessions</p></div>
             <div class="detail-box"><i class="fas fa-handshake"></i><h3>Networking Zones</h3><p>Spaces designed to connect collaborators and stakeholders</p></div>
-            <div class="detail-box"><i class="fas fa-trophy"></i><h3>Award Ceremony</h3><p>Recognising the most innovative and impactful projects</p></div>
+            
+             <div class="detail-box"><i class="fas fa-trophy"></i><h3>Award Ceremony</h3><p>Recognising the most innovative and impactful projects</p></div>
             <div class="detail-box"><i class="fas fa-project-diagram"></i><h3>500+ Projects</h3><p>Curated by 200+ dedicated mentors</p></div>
             <div class="detail-box"><i class="fas fa-users"></i><h3>5,000+ Visitors</h3><p>Including industry experts, funders, parents & stakeholders</p></div>
         </div>
@@ -667,12 +789,15 @@
     <div class="container">
          <div class="section-title">
             <h2>Pre Activities</h2>
-            <p>Engaging teachers and students through impactful initiatives</p>
+  
+           <p>Engaging teachers and students through impactful initiatives</p>
         </div>
         <div class="cards-container">
-            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Teacher & Student Engagement Strategies</h3><p>200 FDP Trainings aim to expand reach from 50–60 colleges to more, empowering teachers as ambassadors. Class Representatives (CRs) act as student ambassadors to form groups and collect student email IDs for Wadhwani Foundation platform access.</p></div></div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Teacher & Student Engagement Strategies</h3><p>200 FDP Trainings aim to expand reach from 50–60 colleges to more, empowering teachers as ambassadors.
+Class Representatives (CRs) act as student ambassadors to form groups and collect student email IDs for Wadhwani Foundation platform access.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-lightbulb"></i></div><h3>Bootcamps for Innovative Learning</h3><p>Class Representatives (CRs) facilitate innovation-focused bootcamps by forming student groups and ensuring access to the Wadhwani Foundation platform.</p></div></div>
-            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-users"></i></div><h3>UMIT & NSS Special Force Initiative</h3><p>Over 10,000 participants will explore innovative projects. Special Bootcamps will focus on Agentic AI + NSS students & teachers, with activities linked to Sustainable Development Goals (SDGs).</p></div></div>
+            <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-users"></i></div><h3>UMIT & NSS Special Force Initiative</h3><p>Over 10,000 participants will explore innovative projects.
+Special Bootcamps will focus on Agentic AI + NSS students & teachers, with activities linked to Sustainable Development Goals (SDGs).</p></div></div>
         </div>
     </div>
 </section>
@@ -683,12 +808,14 @@
             <h2>Flagship Showcases</h2>
             <p>Innovative applications solving real-world problems using AI</p>
         </div>
-         <div class="cards-container">
+         <div 
+ class="cards-container">
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-heartbeat"></i></div><h3>Mental Health AI</h3><p>Solutions designed for emotional well-being and support.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-pills"></i></div><h3>Pharmacopeia AI</h3><p>Advancements in medicine and healthcare for a better tomorrow.</p></div></div>
             <div class="card"><div class="card-content"><div class="card-icon"><i class="fas fa-spa"></i></div><h3>Spiritual AI</h3><p>AI-driven tools for personal growth, mindfulness, and balance.</p></div></div>
         </div>
-        <p style="text-align:center; margin-top:20px; font-size:1.1rem; color:#555;">
+        <p style="text-align:center;
+ margin-top:20px; font-size:1.1rem; color:#555;">
             These showcases inspire research, creativity, and practical solutions that merge technology with humanity.
         </p>
     </div>
@@ -700,11 +827,13 @@
             <h2>Student Integration</h2>
             <p>Where learning meets innovation</p>
         </div>
-         <div class="about-content">
+         <div 
+ class="about-content">
             <div class="about-text">
                 <p><strong>Over 10,000 students and teachers</strong> will actively participate by visiting departments and engaging in hands-on activities.</p>
                 <p>They will learn how to apply academic subjects to create <strong>Agentic AI-based projects</strong>.</p>
-                <p>This approach nurtures skills in technology, problem-solving, and collaboration, fostering a culture of innovation.</p>
+                <p>This approach nurtures skills in technology, problem-solving, and collaboration, fostering a culture 
+ of innovation.</p>
             </div>
             <div class="about-image">
                 <img src="student.jpg" alt="Student Integration">
@@ -717,32 +846,38 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
-                 <h3>Contact Us</h3>
+   
+                  <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> SNDT Women's University, Juhu Campus, Mumbai</p>
                  <p><i class="fas fa-envelope"></i> innovation2025@sndt.ac.in</p>
                 <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
             </div>
-             <div class="footer-section">
+           
+              <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                      <li><a href="#about">About</a></li>
                     <li><a href="pre-detail.html" target="_blank">Pre Activities</a></li>
-                    <li><a href="event-details.html">Event Details</a></li>
+               
+             <li><a href="event-details.html">Event Details</a></li>
                 </ul>
              </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                  <p>Stay updated with the latest news</p>
+                
                  <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                   </div>
+      
+                 </div>
             </div>
          </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 SNDT Women's University. All Rights Reserved.</p>
+            <p>&copy;
+ 2025 SNDT Women's University. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
@@ -754,36 +889,37 @@
         const navToggle = document.querySelector('.mobile-nav-toggle');
         navToggle.addEventListener('click', () => {
             const isVisible = primaryNav.getAttribute('data-visible') === 'true';
-            if (isVisible) {
+            if 
+ (isVisible) {
                 primaryNav.setAttribute('data-visible', false);
                 navToggle.setAttribute('aria-expanded', false);
             } else {
                 primaryNav.setAttribute('data-visible', true);
                 navToggle.setAttribute('aria-expanded', true);
             }
+         
         });
 
         // --- CORRECTED HERO SLIDER SCRIPT ---
         const dots = document.querySelectorAll('.slider-dot');
         const prevArrow = document.querySelector('.arrow.prev');
         const nextArrow = document.querySelector('.arrow.next');
-        const allSlides = document.querySelectorAll('.desktop-slides .slide, .mobile-slides .slide');
+ const allSlides = document.querySelectorAll('.desktop-slides .slide, .mobile-slides .slide');
 
         let currentSlideIndex = 0;
         let visibleSlides = [];
         let slideInterval;
-
-        function getVisibleSlides() {
+ function getVisibleSlides() {
             if (window.innerWidth <= 768) {
                 return document.querySelectorAll('.mobile-slides .slide');
-            } else {
+ } else {
                 return document.querySelectorAll('.desktop-slides .slide');
-            }
+ }
         }
 
         function updateSlider(newIndex) {
             visibleSlides = getVisibleSlides();
-            if (visibleSlides.length === 0) return;
+ if (visibleSlides.length === 0) return;
 
             currentSlideIndex = (newIndex + visibleSlides.length) % visibleSlides.length;
 
@@ -792,33 +928,30 @@
 
             visibleSlides[currentSlideIndex].classList.add('active');
             dots[currentSlideIndex].classList.add('active');
-        }
+ }
         
         function resetInterval() {
             clearInterval(slideInterval);
-            slideInterval = setInterval(() => {
+ slideInterval = setInterval(() => {
                 updateSlider(currentSlideIndex + 1);
             }, 5000);
-        }
+ }
 
         nextArrow.addEventListener('click', () => {
             updateSlider(currentSlideIndex + 1);
             resetInterval();
         });
-
-        prevArrow.addEventListener('click', () => {
+ prevArrow.addEventListener('click', () => {
             updateSlider(currentSlideIndex - 1);
             resetInterval();
         });
-
-        dots.forEach((dot, index) => {
+ dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 updateSlider(index);
                 resetInterval();
             });
         });
-        
-        window.addEventListener('resize', () => updateSlider(currentSlideIndex));
+ window.addEventListener('resize', () => updateSlider(currentSlideIndex));
 
         updateSlider(0);
         resetInterval();
